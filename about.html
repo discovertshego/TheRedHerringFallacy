@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Red Herring Fallacy</title>
+  <title>About — The Red Herring Fallacy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <style>
@@ -868,13 +868,477 @@ a { color: inherit; text-decoration: none; }
   animation-delay: calc(var(--i, 0) * 0.07s);
 }
 
+
+/* ============================================
+   INNER PAGES — About, Archive, Contact, etc.
+   ============================================ */
+.page-header {
+  max-width: 900px;
+  margin: 4rem auto 3rem;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
+}
+.page-header .page-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+}
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.page-header p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+}
+.page-body {
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.about-sidebar {}
+.about-initial-large {
+  width: 100px;
+  height: 100px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.about-sidebar-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+.about-sidebar-value {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.about-main p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.about-main h2 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2.5rem 0 1rem;
+}
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin: 2rem 0;
+}
+.theme-item {
+  background: var(--bg-card);
+  padding: 1.2rem 1.5rem;
+}
+.theme-item-name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.3rem;
+}
+.theme-item-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Archive */
+.archive-list { margin-top: 2rem; }
+.archive-year {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--border);
+  letter-spacing: 0.04em;
+  margin: 2rem 0 0.5rem;
+}
+.archive-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: baseline;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.archive-item:hover .archive-item-title { color: var(--red); }
+.archive-item-left {}
+.archive-item-category {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.3rem;
+}
+.archive-item-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.2s;
+  margin-bottom: 0.3rem;
+}
+.archive-item-excerpt {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+.archive-item-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Podcast */
+.podcast-hero {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.podcast-hero-art {
+  width: 120px;
+  height: 120px;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+.podcast-hero-text h2 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.podcast-hero-text p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.podcast-platforms {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.platform-link {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+.platform-link:hover { border-color: var(--red); color: var(--red); }
+.episode-list { margin-top: 1rem; }
+.episode-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  margin-bottom: 2px;
+  transition: background 0.2s;
+}
+.episode-item:hover { background: var(--bg-card-hover); }
+.episode-number {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.4rem;
+}
+.episode-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+.episode-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+.episode-player {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--bg);
+  padding: 0.7rem;
+}
+.ep-play {
+  width: 36px;
+  height: 36px;
+  background: var(--red);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+.ep-play:hover { background: var(--red-dark); }
+.ep-bar { flex: 1; height: 3px; background: var(--border); position: relative; }
+.ep-progress { width: 0%; height: 100%; background: var(--red); }
+.ep-duration {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Search */
+.search-wrap { margin-bottom: 3rem; }
+.search-bar {
+  display: flex;
+  gap: 0;
+  border: 2px solid var(--red);
+}
+.search-input {
+  flex: 1;
+  padding: 1rem 1.2rem;
+  background: var(--bg-card);
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-btn {
+  padding: 1rem 1.5rem;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.search-btn:hover { background: var(--red-dark); }
+.search-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  background: none;
+}
+.filter-chip:hover, .filter-chip.active {
+  border-color: var(--red);
+  color: var(--red);
+}
+.search-results { margin-top: 2rem; }
+.search-empty {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1rem;
+  padding: 2rem 0;
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+}
+.contact-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.contact-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.contact-info a { color: var(--red); border-bottom: 1px solid var(--red); }
+.contact-form-field { margin-bottom: 1.2rem; }
+.contact-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.contact-input, .contact-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-input:focus, .contact-textarea:focus { border-color: var(--red); }
+.contact-textarea { height: 150px; resize: vertical; }
+.contact-submit {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  padding: 0.9rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.contact-submit:hover { background: var(--red-dark); }
+
+/* Newsletter */
+.newsletter-hero {
+  background: var(--red);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.newsletter-hero h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.newsletter-hero p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  font-weight: 300;
+}
+.newsletter-cta-btn {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+.newsletter-cta-btn:hover { opacity: 0.85; }
+.newsletter-perks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+.perk {
+  background: var(--bg-card);
+  padding: 2rem;
+}
+.perk-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+.perk h3 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.perk p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .themes-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .newsletter-perks { grid-template-columns: 1fr; }
+  .podcast-hero { flex-direction: column; }
+  .archive-item { grid-template-columns: 1fr; gap: 0.3rem; }
+}
 </style>
 </head>
 <body>
-
-  <!-- HEADER -->
   <header class="site-header">
-        <div class="header-top">
+    <div class="header-top">
       <div class="header-date" id="live-date"></div>
       <nav class="header-nav">
         <a href="index.html">Home</a>
@@ -887,52 +1351,53 @@ a { color: inherit; text-decoration: none; }
         <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙 DARK</button>
       </nav>
     </div>
+    <div class="header-title-wrap">
+      <div class="header-rule"></div>
+      <h1 class="site-title"><a href="index.html" style="text-decoration:none;color:inherit;">The Red Herring Fallacy</a></h1>
+      <div class="header-rule"></div>
+      <p class="site-tagline">Dispatches from the margins of the argument</p>
     </div>
-    </div>
-  </section>
+  </header>
 
-  <!-- DIVIDER -->
-  <div class="section-divider">
-    <span>✦</span>
-    <div class="divider-line"></div>
-    <span class="divider-label">Recent Issues</span>
-    <div class="divider-line"></div>
-    <span>✦</span>
+  <div class="page-header">
+    <div class="page-kicker">About</div>
+    <h1>The Red Herring Fallacy</h1>
+    <p>A publication at the intersection of power, argument, and everything in between.</p>
+  </div>
+  <div class="page-body">
+    <div class="about-grid">
+      <div class="about-sidebar">
+        <div class="about-initial-large">TM</div>
+        <div class="about-sidebar-label">Founded</div>
+        <div class="about-sidebar-value">2026</div>
+        <div class="about-sidebar-label">Based in</div>
+        <div class="about-sidebar-value">South Africa</div>
+        <div class="about-sidebar-label">Publisher</div>
+        <div class="about-sidebar-value">Tshegofatso Mamphoko</div>
+        <div class="about-sidebar-label">Substack</div>
+        <div class="about-sidebar-value"><a href="https://substack.com/@tshegofatsomamphoko" target="_blank" style="color:var(--red);border-bottom:1px solid var(--red);">@tshegofatsomamphoko</a></div>
+      </div>
+      <div class="about-main">
+        <p>The Red Herring Fallacy exists because most political arguments are not actually about what they claim to be about. The debate about crime is about race. The debate about gender is about power. The debate about free speech is about who gets to speak without consequence. Every major public argument has a misdirection at its centre — a red herring — and most of us are too busy being outraged to notice we've already been moved away from the real question.</p>
+        <p>This publication is an attempt to name that. Directly. Without performing balance where there isn't any, and without pretending that rigour and anger are mutually exclusive.</p>
+        <p>It covers feminist theory, true crime, politics, sociology, gender and sexuality, philosophy of argument, race and identity, and law and justice — not as separate silos but as a single, interconnected question: <em>whose argument is this serving, and what are they not saying?</em></p>
+        <h2>About the Editor</h2>
+        <p>Tshegofatso Mamphoko is a South African writer and the founder of The Red Herring Fallacy. She writes about power: who holds it, how it is justified, and what gets obscured in the process. Direct by instinct, rigorous by necessity, and constitutionally incapable of leaving a bad argument unchallenged.</p>
+        <h2>What We Cover</h2>
+        <div class="themes-grid">
+          <div class="theme-item"><div class="theme-item-name">Feminist Theory</div><div class="theme-item-desc">Patriarchy, labour, bodily autonomy, backlash</div></div>
+          <div class="theme-item"><div class="theme-item-name">True Crime</div><div class="theme-item-desc">Who gets sympathy, who gets blamed, who gets forgotten</div></div>
+          <div class="theme-item"><div class="theme-item-name">Politics</div><div class="theme-item-desc">Rhetoric, bad faith, language as power</div></div>
+          <div class="theme-item"><div class="theme-item-name">Sociology</div><div class="theme-item-desc">Institutions, norms, deviance, punishment</div></div>
+          <div class="theme-item"><div class="theme-item-name">Race & Identity</div><div class="theme-item-desc">Intersectionality, representation, belonging</div></div>
+          <div class="theme-item"><div class="theme-item-name">Law & Justice</div><div class="theme-item-desc">Courts, policing, who the system protects</div></div>
+          <div class="theme-item"><div class="theme-item-name">Gender & Sexuality</div><div class="theme-item-desc">Queer theory, masculinity, identity and the state</div></div>
+          <div class="theme-item"><div class="theme-item-name">Philosophy of Argument</div><div class="theme-item-desc">Ethics, logic, moral panics, who sets the terms</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- POST GRID -->
-  <section class="post-grid-section">
-    <div class="post-grid" style="grid-template-columns: 1fr;">
-
-      <!-- Article Card — The Architecture of Male Impunity -->
-      <article class="post-card" style="display:grid;grid-template-columns:1fr 2fr;">
-        <div class="post-card-image" style="position:relative;">
-          <img src="posts/architecture-cover.jpg" alt="Architecture of Male Impunity cover" style="width:100%;height:100%;object-fit:cover;display:block;" />
-          <div class="post-card-tag">Feminist Theory</div>
-        </div>
-        <div class="post-card-body">
-          <h3 class="post-card-title"><a href="posts/architecture-of-male-impunity.html" style="text-decoration:none;color:inherit;">The Architecture of Male Impunity</a></h3>
-          <p class="post-card-excerpt">Porn, power, and what Grok's deepfake scandal reveals about a system working exactly as designed.</p>
-          <div class="post-card-meta">By Tshegofatso Mamphoko · Jan 7, 2026 · 10 min read</div>
-          <a href="posts/architecture-of-male-impunity.html" class="read-more-btn" style="margin-top:1rem;display:inline-block;">Read the piece →</a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- SUBSCRIBE SECTION -->
-  <section class="subscribe-section" id="subscribe">
-    <div class="subscribe-inner">
-      <div class="subscribe-kicker">Don't miss an issue</div>
-      <h2 class="subscribe-title">Get the Red Herring Fallacy in your inbox</h2>
-      <p class="subscribe-body">Free issues, subscriber exclusives, and the occasional argument you didn't expect to lose. No spam. Unsubscribe anytime.</p>
-      <a href="https://substack.com/@tshegofatsomamphoko" target="_blank" class="subscribe-btn" style="display:inline-block;text-decoration:none;padding:0.9rem 2.5rem;font-size:0.85rem;">Subscribe on Substack →</a>
-      <p class="subscribe-note">Already on Substack? <a href="https://substack.com/@tshegofatsomamphoko" target="_blank">Find us there too →</a></p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-title">The Red Herring Fallacy</div>
@@ -948,8 +1413,7 @@ a { color: inherit; text-decoration: none; }
       <div class="footer-copy">© 2026 The Red Herring Fallacy. All rights reserved.</div>
     </div>
   </footer>
-
-  <script>
+<script>
 // ============================================
 // RED HERRING FALLACY — Main JS
 // Auto light/dark mode: light 06:00–18:00, dark 18:00–06:00
