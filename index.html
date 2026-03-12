@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Red Herring Fallacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-date" id="live-date"></div>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="archive.html">Archive</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="#subscribe" class="nav-subscribe">Subscribe</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark mode">🌙 DARK</button>
+      </nav>
+    </div>
+    <div class="header-title-wrap">
+      <div class="header-rule"></div>
+      <h1 class="site-title">The Red Herring Fallacy</h1>
+      <div class="header-rule"></div>
+      <p class="site-tagline">Dispatches from the margins of the argument</p>
+      <nav class="topic-nav">
+        <a href="#">Feminist Theory</a>
+        <a href="#">True Crime</a>
+        <a href="#">Politics</a>
+        <a href="#">Race & Identity</a>
+        <a href="#">Law & Justice</a>
+        <a href="#">Gender & Sexuality</a>
+        <a href="#">Philosophy of Argument</a>
+        <a href="#">Sociology</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO POST -->
+  <section class="hero-post">
+    <div class="hero-label">Latest Issue</div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-category">Essay</div>
+        <h2 class="hero-title">The Misdirection Industrial Complex</h2>
+        <p class="hero-excerpt">Every political debate has a red herring at its centre. The question isn't whether you're being misled — it's whether you notice before you've already agreed.</p>
+        <div class="hero-meta">
+          <span class="hero-author">By the Editor</span>
+          <span class="hero-dot">·</span>
+          <span class="hero-date">March 2026</span>
+          <span class="hero-dot">·</span>
+          <span class="hero-read">8 min read</span>
+        </div>
+        <a href="posts/template.html" class="read-more-btn">Read the piece →</a>
+      </div>
+      <div class="hero-image-wrap">
+        <div class="hero-image-placeholder">
+          <span>Add cover image</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="section-divider">
+    <span>✦</span>
+    <div class="divider-line"></div>
+    <span class="divider-label">Recent Issues</span>
+    <div class="divider-line"></div>
+    <span>✦</span>
+  </div>
+
+  <!-- POST GRID -->
+  <section class="post-grid-section">
+    <div class="post-grid">
+
+      <!-- Article Card -->
+      <article class="post-card">
+        <div class="post-card-image">
+          <div class="post-image-placeholder">Image</div>
+          <div class="post-card-tag">Essay</div>
+        </div>
+        <div class="post-card-body">
+          <h3 class="post-card-title">Whataboutism: The Rhetorical Cockroach</h3>
+          <p class="post-card-excerpt">It survives every argument, thrives in bad faith, and never actually answers the question.</p>
+          <div class="post-card-meta">March 2026 · 6 min</div>
+        </div>
+      </article>
+
+      <!-- Podcast Card -->
+      <article class="post-card post-card--podcast">
+        <div class="post-card-body">
+          <div class="post-card-tag">Podcast</div>
+          <h3 class="post-card-title">Episode 12: On Tone Policing and Who Gets to Be Angry</h3>
+          <p class="post-card-excerpt">A conversation about whose emotions are treated as legitimate in public debate — and why.</p>
+          <div class="podcast-player-mock">
+            <div class="play-btn">▶</div>
+            <div class="podcast-bar">
+              <div class="podcast-progress"></div>
+            </div>
+            <span class="podcast-duration">42:18</span>
+          </div>
+          <div class="post-card-meta">February 2026</div>
+        </div>
+      </article>
+
+      <!-- Quote Card -->
+      <article class="post-card post-card--quote">
+        <div class="post-card-body">
+          <div class="post-card-tag">Quote</div>
+          <blockquote class="featured-quote">
+            "The most dangerous argument is the one that sounds reasonable while pointing in entirely the wrong direction."
+          </blockquote>
+          <cite class="quote-source">— Red Herring Fallacy, Issue 3</cite>
+        </div>
+      </article>
+
+      <!-- Article Card -->
+      <article class="post-card">
+        <div class="post-card-image">
+          <div class="post-image-placeholder">Image</div>
+          <div class="post-card-tag">Analysis</div>
+        </div>
+        <div class="post-card-body">
+          <h3 class="post-card-title">False Equivalence and the Media's Obsession with Balance</h3>
+          <p class="post-card-excerpt">Not every argument deserves the other side of the scale. Some things are just wrong.</p>
+          <div class="post-card-meta">February 2026 · 10 min</div>
+        </div>
+      </article>
+
+      <!-- Subscriber-only Card -->
+      <article class="post-card post-card--locked">
+        <div class="post-card-image">
+          <div class="post-image-placeholder locked-image">🔒</div>
+          <div class="post-card-tag post-card-tag--sub">Subscribers Only</div>
+        </div>
+        <div class="post-card-body">
+          <h3 class="post-card-title">The Ad Hominem Economy: When Attacking the Person Became a Strategy</h3>
+          <p class="post-card-excerpt">Subscriber exclusive. Subscribe to read.</p>
+          <a href="#subscribe" class="lock-cta">Unlock this piece →</a>
+        </div>
+      </article>
+
+      <!-- Video Card -->
+      <article class="post-card post-card--video">
+        <div class="post-card-image">
+          <div class="post-image-placeholder video-placeholder">
+            <div class="video-play-icon">▶</div>
+            <span>Video Essay</span>
+          </div>
+          <div class="post-card-tag">Video</div>
+        </div>
+        <div class="post-card-body">
+          <h3 class="post-card-title">Watching Politicians Dodge Questions in Real Time</h3>
+          <p class="post-card-excerpt">A breakdown of five classic deflection techniques caught on camera.</p>
+          <div class="post-card-meta">January 2026 · 14 min watch</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE SECTION -->
+  <section class="subscribe-section" id="subscribe">
+    <div class="subscribe-inner">
+      <div class="subscribe-kicker">Don't miss an issue</div>
+      <h2 class="subscribe-title">Get the Red Herring Fallacy in your inbox</h2>
+      <p class="subscribe-body">Free issues, subscriber exclusives, and the occasional argument you didn't expect to lose. No spam. Unsubscribe anytime.</p>
+      <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+        <input type="email" placeholder="your@email.com" class="subscribe-input" required />
+        <button type="submit" class="subscribe-btn">Subscribe Free</button>
+      </form>
+      <p class="subscribe-note">Want full access? <a href="#subscribe">Join as a paid subscriber →</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-title">The Red Herring Fallacy</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="archive.html">Archive</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-copy">© 2026 The Red Herring Fallacy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
