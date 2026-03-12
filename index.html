@@ -868,6 +868,58 @@ a { color: inherit; text-decoration: none; }
   animation-delay: calc(var(--i, 0) * 0.07s);
 }
 
+
+/* ============================================
+   TOPIC FILTER BAR
+   ============================================ */
+.filter-bar-section {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  padding: 0 2rem;
+  overflow-x: auto;
+}
+.filter-bar {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.filter-btn:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+.filter-btn.active {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+.post-card.hidden {
+  display: none !important;
+}
+.no-results {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-muted);
+  padding: 3rem 0;
+  text-align: center;
+  font-size: 1rem;
+  display: none;
+  grid-column: 1 / -1;
+}
+.no-results.visible { display: block; }
+
 </style>
 </head>
 <body>
@@ -901,11 +953,27 @@ a { color: inherit; text-decoration: none; }
   </div>
 
   <!-- POST GRID -->
-  <section class="post-grid-section">
+  
+  <!-- TOPIC FILTER BAR -->
+  <section class="filter-bar-section">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterPosts('all', this)">All</button>
+      <button class="filter-btn" onclick="filterPosts('feminist-theory', this)">Feminist Theory</button>
+      <button class="filter-btn" onclick="filterPosts('true-crime', this)">True Crime</button>
+      <button class="filter-btn" onclick="filterPosts('politics', this)">Politics</button>
+      <button class="filter-btn" onclick="filterPosts('race-identity', this)">Race & Identity</button>
+      <button class="filter-btn" onclick="filterPosts('law-justice', this)">Law & Justice</button>
+      <button class="filter-btn" onclick="filterPosts('gender-sexuality', this)">Gender & Sexuality</button>
+      <button class="filter-btn" onclick="filterPosts('philosophy', this)">Philosophy of Argument</button>
+      <button class="filter-btn" onclick="filterPosts('sociology', this)">Sociology</button>
+    </div>
+  </section>
+
+<section class="post-grid-section">
     <div class="post-grid" style="grid-template-columns: 1fr;">
 
       <!-- Article Card — The Architecture of Male Impunity -->
-      <article class="post-card" style="display:grid;grid-template-columns:1fr 2fr;">
+      <article class="post-card" data-tags="feminist-theory law-justice" style="display:grid;grid-template-columns:1fr 2fr;">
         <div class="post-card-image" style="position:relative;">
           <img src="posts/architecture-cover.jpg" alt="Architecture of Male Impunity cover" style="width:100%;height:100%;object-fit:cover;display:block;" />
           <div class="post-card-tag">Feminist Theory</div>
@@ -1059,6 +1127,42 @@ document.querySelectorAll('.play-btn').forEach(btn => {
     btn.textContent = isPlaying ? '▶' : '❚❚';
   });
 });
+
+
+// ── Topic filter ─────────────────────────────
+function filterPosts(tag, btn) {
+  // Update active button
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const cards = document.querySelectorAll('.post-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    if (tag === 'all') {
+      card.classList.remove('hidden');
+      visible++;
+    } else {
+      const tags = card.dataset.tags || '';
+      if (tags.includes(tag)) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    }
+  });
+
+  // Show empty state if nothing matches
+  let empty = document.querySelector('.no-results');
+  if (!empty) {
+    empty = document.createElement('p');
+    empty.className = 'no-results';
+    empty.textContent = 'No articles in this category yet — check back soon.';
+    document.querySelector('.post-grid').appendChild(empty);
+  }
+  empty.classList.toggle('visible', visible === 0);
+}
 
 </script>
 </body>

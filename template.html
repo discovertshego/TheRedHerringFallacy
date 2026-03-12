@@ -871,42 +871,24 @@ a { color: inherit; text-decoration: none; }
 </style>
 </head>
 <body>
+<div id="reading-progress"></div>
 
   <!-- HEADER -->
   <header class="site-header">
-    <div class="header-top">
+        <div class="header-top">
       <div class="header-date" id="live-date"></div>
       <nav class="header-nav">
         <a href="../index.html">Home</a>
         <a href="../archive.html">Archive</a>
         <a href="../podcast.html">Podcast</a>
-        <a href="../index.html#subscribe" class="nav-subscribe">Subscribe</a>
-        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" title="Toggle light/dark mode">🌙 DARK</button>
+        <a href="../search.html">Search</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../newsletter.html" class="nav-subscribe">Newsletter</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙 DARK</button>
       </nav>
     </div>
-    <div class="header-title-wrap">
-      <div class="header-rule"></div>
-      <h1 class="site-title"><a href="../index.html">The Red Herring Fallacy</a></h1>
-      <div class="header-rule"></div>
-      <p class="site-tagline">Dispatches from the margins of the argument</p>
     </div>
-  </header>
-
-  <!-- ARTICLE HEADER -->
-  <div class="article-header">
-    <div class="article-category">Essay</div>
-    <!-- EDIT: Change the title -->
-    <h1 class="article-title">Your Article Title Goes Here</h1>
-    <!-- EDIT: Change the subtitle/deck -->
-    <p class="article-subtitle">A compelling one-liner that draws the reader in.</p>
-    <div class="article-meta">
-      <span>By the Editor</span>
-      <span style="color:#D7000F">·</span>
-      <span>March 2026</span>
-      <span style="color:#D7000F">·</span>
-      <span>8 min read</span>
-    </div>
-  </div>
 
   <!-- COVER IMAGE: Replace div with <img src="your-image.jpg" alt="..."> -->
   <div class="article-cover">
@@ -982,6 +964,25 @@ a { color: inherit; text-decoration: none; }
     </p>
 
   </article>
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span class="share-label">Share this piece</span>
+    <button class="share-btn" onclick="shareTwitter()" title="Share on X">𝕏 Post</button>
+    <button class="share-btn" onclick="shareWhatsApp()" title="Share on WhatsApp">WhatsApp</button>
+    <button class="share-btn" onclick="copyLink(this)" title="Copy link">Copy Link</button>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-label">More from The Red Herring Fallacy</div>
+      <div class="related-grid"><div class="related-empty">More articles coming soon.</div></div>
+      <div class="related-substack">
+        <a href="https://substack.com/@tshegofatsomamphoko" target="_blank" class="related-substack-link">Discuss this piece on Substack →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -1109,5 +1110,9 @@ document.querySelectorAll('.play-btn').forEach(btn => {
 });
 
 </script>
+<aside id="toc" class="toc-sidebar"><div class="toc-label">In this piece</div><nav id="toc-nav"></nav></aside>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div id="newsletter-popup" class="nl-popup"><button class="nl-close" onclick="closePopup()">✕</button><div class="nl-popup-kicker">Don't miss the next piece</div><h3 class="nl-popup-title">The Red Herring Fallacy</h3><p class="nl-popup-body">Essays on power, argument, and everything in between. Free on Substack.</p><a href="https://substack.com/@tshegofatsomamphoko" target="_blank" class="nl-popup-btn" onclick="closePopup()">Subscribe on Substack →</a><button class="nl-popup-dismiss" onclick="closePopup()">Maybe later</button></div>
+<div id="nl-overlay" onclick="closePopup()"></div>
 </body>
 </html>
