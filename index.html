@@ -1236,6 +1236,36 @@ img.loaded, img:not([loading]) {
 ::-webkit-scrollbar-thumb { background: var(--red); }
 ::-webkit-scrollbar-thumb:hover { background: var(--red-dark); }
 
+
+/* ── Title gradient fix — works on both h1 and anchor child ── */
+.site-title,
+.site-title a,
+.site-title[class*="title-"],
+.site-title a[class*="title-"] {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+/* When seasonal class applied, gradient overrides color */
+.site-title.title-summer,
+.site-title.title-autumn,
+.site-title.title-winter,
+.site-title.title-spring,
+.site-title.title-womens,
+.site-title.title-heritage,
+.site-title.title-cancer,
+.site-title.title-christmas {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+/* The anchor inside must inherit */
+.site-title a {
+  background: inherit;
+  -webkit-background-clip: inherit;
+  background-clip: inherit;
+  -webkit-text-fill-color: inherit;
+}
+
 </style>
 </head>
 <body>
