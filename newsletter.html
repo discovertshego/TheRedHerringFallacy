@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YT4XEJZHRM">
+function showCookieBanner() {
+  if (!localStorage.getItem('cookie-choice')) {
+    setTimeout(() => { const b = document.getElementById('cookie-banner'); if (b) b.classList.add('visible'); }, 1500);
+  }
+}
+function acceptCookies() { localStorage.setItem('cookie-choice', 'accepted'); document.getElementById('cookie-banner').classList.remove('visible'); }
+function declineCookies() { localStorage.setItem('cookie-choice', 'declined'); document.getElementById('cookie-banner').classList.remove('visible'); }
+showCookieBanner();
+
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YT4XEJZHRM');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Newsletter — The Red Herring Fallacy</title>
@@ -1334,6 +1352,32 @@ a { color: inherit; text-decoration: none; }
   .podcast-hero { flex-direction: column; }
   .archive-item { grid-template-columns: 1fr; gap: 0.3rem; }
 }
+
+/* Cookie Banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-top: 3px solid var(--red);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 9998;
+  flex-wrap: wrap;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+#cookie-banner.visible { transform: translateY(0); }
+.cookie-text { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; flex: 1; }
+.cookie-text a { color: var(--red); border-bottom: 1px solid var(--red); }
+.cookie-btns { display: flex; gap: 0.8rem; flex-shrink: 0; }
+.cookie-accept { background: var(--red); color: var(--white); border: none; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.2rem; cursor: pointer; }
+.cookie-decline { background: none; border: 1px solid var(--border); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.2rem; cursor: pointer; }
+
 </style>
 </head>
 <body>
@@ -1399,8 +1443,11 @@ a { color: inherit; text-decoration: none; }
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="newsletter.html">Newsletter</a>
+        <a href="faq.html">FAQ</a>
+        <a href="comments-policy.html">Comments Policy</a>
+        <a href="subscription-terms.html">Terms</a>
       </div>
-      <div class="footer-copy">© 2026 The Red Herring Fallacy. All rights reserved.</div>
+            <div class="footer-copy">© 2026 The Red Herring Fallacy. All rights reserved. · <a href="comments-policy.html" style="color:inherit;border-bottom:1px solid var(--border);">Comments Policy</a> · <a href="subscription-terms.html" style="color:inherit;border-bottom:1px solid var(--border);">Terms</a> · <a href="faq.html" style="color:inherit;border-bottom:1px solid var(--border);">FAQ</a></div>
     </div>
   </footer>
 <script>
