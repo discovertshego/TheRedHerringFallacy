@@ -1,9 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YT4XEJZHRM">
+function showCookieBanner() {
+  if (!localStorage.getItem('cookie-choice')) {
+    setTimeout(() => { const b = document.getElementById('cookie-banner'); if (b) b.classList.add('visible'); }, 1500);
+  }
+}
+function acceptCookies() { localStorage.setItem('cookie-choice', 'accepted'); document.getElementById('cookie-banner').classList.remove('visible'); }
+function declineCookies() { localStorage.setItem('cookie-choice', 'declined'); document.getElementById('cookie-banner').classList.remove('visible'); }
+showCookieBanner();
+
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YT4XEJZHRM');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Architecture of Male Impunity — The Red Herring Fallacy</title>
+    <!-- SEO Meta Tags -->
+  <meta name="description" content="Porn, power, and what the Grok deepfake scandal reveals about a system of male impunity working exactly as designed. By Tshegofatso Mamphoko." />
+  <meta name="author" content="Tshegofatso Mamphoko" />
+  <meta name="keywords" content="male impunity, deepfakes, Grok, sexual violence, South Africa, feminist theory, conviction rate" />
+  <meta property="og:title" content="The Architecture of Male Impunity" />
+  <meta property="og:description" content="Porn, power, and what the Grok deepfake scandal reveals about a system working exactly as designed." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://discovertshego.github.io/TheRedHerringFallacy/posts/architecture-of-male-impunity.html" />
+  <meta property="og:image" content="https://discovertshego.github.io/TheRedHerringFallacy/posts/architecture-cover.jpg" />
+  <meta property="article:published_time" content="2026-01-07" />
+  <meta property="article:author" content="Tshegofatso Mamphoko" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Architecture of Male Impunity" />
+  <meta name="twitter:description" content="Porn, power, and what the Grok deepfake scandal reveals about a system working exactly as designed." />
+  <meta name="twitter:image" content="https://discovertshego.github.io/TheRedHerringFallacy/posts/architecture-cover.jpg" />
+  <link rel="canonical" href="https://discovertshego.github.io/TheRedHerringFallacy/posts/architecture-of-male-impunity.html" />
+
+    <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="alternate icon" href="../favicon.svg">
+  <meta name="theme-color" content="#D7000F">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <style>
@@ -766,7 +807,8 @@ a { color: inherit; text-decoration: none; }
 .article-cover img,
 .article-cover .cover-placeholder {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: unset;
+  max-height: 560px;
   object-fit: cover;
   display: block;
 }
@@ -1142,6 +1184,401 @@ a { color: inherit; text-decoration: none; }
   .related-grid { grid-template-columns: 1fr; }
 }
 
+
+/* Disqus Comments */
+.disqus-section {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+.disqus-inner {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+.disqus-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+
+
+/* Cookie Banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-top: 3px solid var(--red);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 9998;
+  flex-wrap: wrap;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+#cookie-banner.visible { transform: translateY(0); }
+.cookie-text { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; flex: 1; }
+.cookie-text a { color: var(--red); border-bottom: 1px solid var(--red); }
+.cookie-btns { display: flex; gap: 0.8rem; flex-shrink: 0; }
+.cookie-accept { background: var(--red); color: var(--white); border: none; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.2rem; cursor: pointer; }
+.cookie-decline { background: none; border: 1px solid var(--border); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.2rem; cursor: pointer; }
+
+
+/* ============================================================
+   SEASONAL & FESTIVE THEME STYLES
+   ============================================================ */
+
+/* Season badge */
+#season-badge {
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  z-index: 9990;
+  pointer-events: none;
+  white-space: nowrap;
+}
+#season-badge.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Title effects ────────────────────────────────── */
+
+/* Summer — warm gradient shimmer */
+.title-summer {
+  background: linear-gradient(135deg, #E8510A 0%, #D4A017 50%, #E8510A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Autumn — warm fade */
+.title-autumn {
+  background: linear-gradient(135deg, #C45206 0%, #8B5E3C 50%, #C45206 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+/* Winter — cool silver */
+.title-winter {
+  background: linear-gradient(135deg, #2C5F8A 0%, #7B9DB8 50%, #2C5F8A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Spring — green blush */
+.title-spring {
+  background: linear-gradient(135deg, #4A7C59 0%, #E8A0BF 50%, #4A7C59 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Women's Month — purple gold */
+.title-womens {
+  background: linear-gradient(135deg, #7B2D8B 0%, #D4A017 50%, #7B2D8B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Heritage Month — earthy */
+.title-heritage {
+  background: linear-gradient(135deg, #8B4513 0%, #C17F3A 30%, #D4A017 60%, #8B4513 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Cancer Awareness — pink */
+.title-cancer {
+  background: linear-gradient(135deg, #C2185B 0%, #F8BBD9 50%, #C2185B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Christmas — gold green sparkle */
+.title-christmas {
+  background: linear-gradient(135deg, #1B6B3A 0%, #D4A017 30%, #FF0000 60%, #D4A017 80%, #1B6B3A 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Christmas Lights ─────────────────────────────── */
+#xmas-lights {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0 0.3rem;
+  position: relative;
+}
+#xmas-lights::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: #333;
+}
+.light {
+  width: 10px;
+  height: 14px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: var(--color);
+  position: relative;
+  animation: glow 1.5s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * 0.1s);
+  box-shadow: 0 0 6px var(--color), 0 0 12px var(--color);
+  flex-shrink: 0;
+}
+.light::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: #555;
+}
+@keyframes glow {
+  from { opacity: 0.6; box-shadow: 0 0 4px var(--color); }
+  to   { opacity: 1;   box-shadow: 0 0 10px var(--color), 0 0 20px var(--color); }
+}
+
+/* ============================================================
+   UX IMPROVEMENTS — Accessibility, Performance, Mobile
+   ============================================================ */
+
+/* Skip to content link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--red);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 10000;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Focus styles for keyboard nav */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+img[loading="lazy"] {
+  opacity: 0;
+}
+img.loaded, img:not([loading]) {
+  opacity: 1;
+}
+
+/* Mobile nav improvements */
+@media (max-width: 768px) {
+  .header-nav {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .header-nav a {
+    font-size: 0.65rem;
+  }
+  .site-title {
+    font-size: clamp(2rem, 10vw, 5rem);
+  }
+  .article-header {
+    margin: 2rem auto 2rem;
+  }
+  .article-body {
+    font-size: 0.95rem;
+  }
+  #back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .site-header, .site-footer, .share-bar, #back-to-top,
+  .newsletter-popup, #cookie-banner, .toc-sidebar,
+  #season-badge, #xmas-lights { display: none !important; }
+  .article-body { max-width: 100%; }
+  body { background: white; color: black; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Selection color */
+::selection {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--red); }
+::-webkit-scrollbar-thumb:hover { background: var(--red-dark); }
+
+
+/* ── Title gradient fix — works on both h1 and anchor child ── */
+.site-title,
+.site-title a,
+.site-title[class*="title-"],
+.site-title a[class*="title-"] {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+/* When seasonal class applied, gradient overrides color */
+.site-title.title-summer,
+.site-title.title-autumn,
+.site-title.title-winter,
+.site-title.title-spring,
+.site-title.title-womens,
+.site-title.title-heritage,
+.site-title.title-cancer,
+.site-title.title-christmas {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+/* The anchor inside must inherit */
+.site-title a {
+  background: inherit;
+  -webkit-background-clip: inherit;
+  background-clip: inherit;
+  -webkit-text-fill-color: inherit;
+}
+
+
+/* ── Spotify Now Playing ─────────────────────── */
+.spotify-bar {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 0.7rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+.spotify-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: #1DB954;
+}
+.spotify-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.spotify-track {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.spotify-track a {
+  color: #1DB954;
+  border-bottom: 1px solid #1DB954;
+  transition: opacity 0.2s;
+}
+.spotify-track a:hover { opacity: 0.7; }
+.spotify-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.spotify-bars span {
+  width: 3px;
+  background: #1DB954;
+  animation: sound-bar 0.8s ease infinite alternate;
+}
+.spotify-bars span:nth-child(1) { height: 40%; animation-delay: 0s; }
+.spotify-bars span:nth-child(2) { height: 80%; animation-delay: 0.2s; }
+.spotify-bars span:nth-child(3) { height: 60%; animation-delay: 0.1s; }
+.spotify-bars span:nth-child(4) { height: 100%; animation-delay: 0.3s; }
+@keyframes sound-bar {
+  from { transform: scaleY(0.4); }
+  to   { transform: scaleY(1); }
+}
+.spotify-bar.not-playing .spotify-bars { display: none; }
+.spotify-bar.not-playing .spotify-label { display: none; }
+
 </style>
   <style>
     .article-body .data-block {
@@ -1243,7 +1680,7 @@ a { color: inherit; text-decoration: none; }
 
   <!-- COVER IMAGE -->
   <div class="article-cover">
-    <img src="architecture-cover.jpg" alt="Scene from Nosferatu directed by Robert Eggers — a woman in period dress, head thrown back, tearing at her clothing in anguish" style="width:100%;display:block;object-fit:cover;max-height:560px;" />
+    <img src="architecture-cover.jpg" alt="Scene from Nosferatu directed by Robert Eggers — a woman in period dress, head thrown back, tearing at her clothing in anguish" style="width:100%;display:block;object-fit:cover;max-height:560px;" / loading="lazy">
     <p style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--text-muted);margin-top:0.5rem;">Still from <em>Nosferatu</em>, dir. Robert Eggers (2024)</p>
   </div>
 
@@ -1396,6 +1833,25 @@ a { color: inherit; text-decoration: none; }
     </div>
   </div>
 
+  <!-- DISQUS COMMENTS -->
+  <section class="disqus-section">
+    <div class="disqus-inner">
+      <div class="disqus-label">Join the conversation</div>
+      <div id="disqus_thread"></div>
+    </div>
+  </section>
+  <script>
+    var disqus_config = function () {
+      this.page.url = window.location.href;
+      this.page.identifier = window.location.pathname;
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-red-herring-fallacy.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
   <!-- RELATED ARTICLES -->
   <section class="related-section">
     <div class="related-inner">
@@ -1410,6 +1866,22 @@ a { color: inherit; text-decoration: none; }
   </section>
 
   <!-- FOOTER -->
+  
+  <!-- SPOTIFY NOW PLAYING -->
+  <div class="spotify-bar" id="spotify-bar">
+    <svg class="spotify-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-label">Now Playing</span>
+    <span class="spotify-track" id="spotify-track">
+      <!-- Track info loads here -->
+      <a href="https://open.spotify.com" target="_blank">Open Spotify</a>
+    </span>
+    <div class="spotify-bars">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-title">The Red Herring Fallacy</div>
@@ -1649,5 +2121,263 @@ function copyLink(btn) {
   </div>
   <div id="nl-overlay" onclick="closePopup()"></div>
 
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p class="cookie-text">We use cookies to analyse traffic and improve your experience. See our <a href="../subscription-terms.html">terms</a>.</p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+</main>
+<script>
+
+// ============================================================
+// THE RED HERRING FALLACY — Seasonal & Festive Theme Engine
+// South African seasons + special awareness months
+// ============================================================
+
+const THEMES = {
+
+  // ── SOUTH AFRICAN SEASONS ───────────────────────────────
+  summer: {
+    name: "Summer",
+    months: [12, 1, 2],
+    vars: {
+      "--red": "#E8510A",
+      "--red-dark": "#B83E06",
+      "--red-muted": "#8B3005",
+      "--season-accent": "#D4A017",
+      "--season-bg-tint": "rgba(232,81,10,0.04)",
+    },
+    titleEffect: "summer",
+    label: "Summer Edition"
+  },
+
+  autumn: {
+    name: "Autumn",
+    months: [3, 4, 5],
+    vars: {
+      "--red": "#C45206",
+      "--red-dark": "#9A3F04",
+      "--red-muted": "#7A3204",
+      "--season-accent": "#8B5E3C",
+      "--season-bg-tint": "rgba(139,62,15,0.04)",
+    },
+    titleEffect: "autumn",
+    label: "Autumn Edition"
+  },
+
+  winter: {
+    name: "Winter",
+    months: [6, 7],
+    vars: {
+      "--red": "#2C5F8A",
+      "--red-dark": "#1E4266",
+      "--red-muted": "#163349",
+      "--season-accent": "#7B9DB8",
+      "--season-bg-tint": "rgba(44,95,138,0.04)",
+    },
+    titleEffect: "winter",
+    label: "Winter Edition"
+  },
+
+  // ── SPECIAL MONTHS (override season) ────────────────────
+
+  womens_month: {
+    name: "Women's Month",
+    months: [8],
+    vars: {
+      "--red": "#7B2D8B",
+      "--red-dark": "#5C1F6B",
+      "--red-muted": "#3D1247",
+      "--season-accent": "#D4A017",
+      "--season-bg-tint": "rgba(123,45,139,0.04)",
+    },
+    titleEffect: "womens",
+    label: "Women's Month"
+  },
+
+  heritage: {
+    name: "Heritage Month",
+    months: [9],
+    vars: {
+      "--red": "#8B4513",
+      "--red-dark": "#6B3510",
+      "--red-muted": "#4A2509",
+      "--season-accent": "#C17F3A",
+      "--season-bg-tint": "rgba(139,69,19,0.04)",
+    },
+    titleEffect: "heritage",
+    label: "Heritage Month"
+  },
+
+  cancer: {
+    name: "Cancer Awareness",
+    months: [10],
+    vars: {
+      "--red": "#C2185B",
+      "--red-dark": "#8E1042",
+      "--red-muted": "#5C0B2B",
+      "--season-accent": "#F8BBD9",
+      "--season-bg-tint": "rgba(194,24,91,0.04)",
+    },
+    titleEffect: "cancer",
+    label: "Cancer Awareness Month"
+  },
+
+  spring: {
+    name: "Spring",
+    months: [11],
+    vars: {
+      "--red": "#4A7C59",
+      "--red-dark": "#355C40",
+      "--red-muted": "#254030",
+      "--season-accent": "#E8A0BF",
+      "--season-bg-tint": "rgba(74,124,89,0.04)",
+    },
+    titleEffect: "spring",
+    label: "Spring Edition"
+  },
+
+  christmas: {
+    name: "Christmas",
+    months: [12],
+    startDay: 10,
+    vars: {
+      "--red": "#1B6B3A",
+      "--red-dark": "#145230",
+      "--red-muted": "#0D3A22",
+      "--season-accent": "#D4A017",
+      "--season-bg-tint": "rgba(27,107,58,0.04)",
+    },
+    titleEffect: "christmas",
+    label: "Christmas Edition"
+  }
+};
+
+// ── Determine active theme ────────────────────────────────
+function getActiveTheme() {
+  const now = new Date();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+
+  // Christmas overrides summer from Dec 10
+  if (month === 12 && day >= 10) return THEMES.christmas;
+
+  // Check special months first (override seasons)
+  for (const key of ['womens_month', 'heritage', 'cancer']) {
+    if (THEMES[key].months.includes(month)) return THEMES[key];
+  }
+
+  // Then seasons
+  for (const key of ['summer', 'autumn', 'winter', 'spring']) {
+    if (THEMES[key].months.includes(month)) return THEMES[key];
+  }
+
+  return THEMES.summer; // fallback
+}
+
+// ── Apply CSS variables ───────────────────────────────────
+function applySeasonalTheme(theme) {
+  const root = document.documentElement;
+  Object.entries(theme.vars).forEach(([k, v]) => root.style.setProperty(k, v));
+
+  // Apply title effect
+  applyTitleEffect(theme.titleEffect, theme);
+
+  // Show season badge
+  showSeasonBadge(theme.label);
+
+  // Store for reference
+  window._activeTheme = theme;
+}
+
+// ── Title effects ─────────────────────────────────────────
+function applyTitleEffect(effect, theme) {
+  const title = document.querySelector('.site-title');
+  if (!title) return;
+
+  // Remove previous effects
+  title.classList.remove('title-christmas', 'title-womens', 'title-cancer',
+    'title-heritage', 'title-spring', 'title-summer', 'title-autumn', 'title-winter');
+
+  title.classList.add('title-' + effect);
+
+  // Christmas lights
+  if (effect === 'christmas') {
+    addChristmasLights(title);
+  } else {
+    removeChristmasLights();
+  }
+}
+
+function addChristmasLights(title) {
+  if (document.getElementById('xmas-lights')) return;
+  const lights = document.createElement('div');
+  lights.id = 'xmas-lights';
+  lights.innerHTML = Array.from({length: 20}, (_, i) =>
+    `<span class="light" style="--i:${i};--color:${['#FF0000','#00AA00','#FFD700','#FF6600','#0066FF'][i%5]}"></span>`
+  ).join('');
+  title.parentNode.insertBefore(lights, title);
+}
+
+function removeChristmasLights() {
+  const el = document.getElementById('xmas-lights');
+  if (el) el.remove();
+}
+
+// ── Season badge ──────────────────────────────────────────
+function showSeasonBadge(label) {
+  let badge = document.getElementById('season-badge');
+  if (!badge) {
+    badge = document.createElement('div');
+    badge.id = 'season-badge';
+    document.body.appendChild(badge);
+  }
+  badge.textContent = label;
+  badge.classList.add('visible');
+  setTimeout(() => badge.classList.remove('visible'), 4000);
+}
+
+// ── Init ──────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const theme = getActiveTheme();
+  applySeasonalTheme(theme);
+});
+
+</script>
+<script>
+
+// ── Spotify Now Playing ──────────────────────────────
+// To update your now-playing track:
+// 1. Go to Spotify, right-click any song → Share → Copy Song Link
+// 2. Update SPOTIFY_TRACK below with the song name, artist, and link
+// This updates across the whole site when you change it here
+// For automatic real-time sync, a backend server is required (see FAQ)
+
+const SPOTIFY_CONFIG = {
+  trackName: null,   // e.g. "Flowers - Miley Cyrus"  
+  trackUrl: null,    // e.g. "https://open.spotify.com/track/..."
+  active: false      // set to true when you want to show it
+};
+
+(function initSpotify() {
+  const bar = document.getElementById('spotify-bar');
+  const trackEl = document.getElementById('spotify-track');
+  if (!bar || !trackEl) return;
+
+  if (SPOTIFY_CONFIG.active && SPOTIFY_CONFIG.trackName) {
+    trackEl.innerHTML = SPOTIFY_CONFIG.trackUrl 
+      ? `<a href="${SPOTIFY_CONFIG.trackUrl}" target="_blank">${SPOTIFY_CONFIG.trackName}</a>`
+      : SPOTIFY_CONFIG.trackName;
+    bar.style.display = 'flex';
+  } else {
+    bar.style.display = 'none';
+  }
+})();
+
+</script>
 </body>
 </html>

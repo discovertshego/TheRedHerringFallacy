@@ -782,7 +782,8 @@ a { color: inherit; text-decoration: none; }
 .article-cover img,
 .article-cover .cover-placeholder {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: unset;
+  max-height: 560px;
   object-fit: cover;
   display: block;
 }
@@ -1776,6 +1777,70 @@ img.loaded, img:not([loading]) {
   -webkit-text-fill-color: inherit;
 }
 
+
+/* ── Spotify Now Playing ─────────────────────── */
+.spotify-bar {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 0.7rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+.spotify-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: #1DB954;
+}
+.spotify-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.spotify-track {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.spotify-track a {
+  color: #1DB954;
+  border-bottom: 1px solid #1DB954;
+  transition: opacity 0.2s;
+}
+.spotify-track a:hover { opacity: 0.7; }
+.spotify-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.spotify-bars span {
+  width: 3px;
+  background: #1DB954;
+  animation: sound-bar 0.8s ease infinite alternate;
+}
+.spotify-bars span:nth-child(1) { height: 40%; animation-delay: 0s; }
+.spotify-bars span:nth-child(2) { height: 80%; animation-delay: 0.2s; }
+.spotify-bars span:nth-child(3) { height: 60%; animation-delay: 0.1s; }
+.spotify-bars span:nth-child(4) { height: 100%; animation-delay: 0.3s; }
+@keyframes sound-bar {
+  from { transform: scaleY(0.4); }
+  to   { transform: scaleY(1); }
+}
+.spotify-bar.not-playing .spotify-bars { display: none; }
+.spotify-bar.not-playing .spotify-label { display: none; }
+
 </style>
 </head>
 <body>
@@ -1841,6 +1906,22 @@ img.loaded, img:not([loading]) {
 
     <h2>Contact</h2>
     <p>Questions about this policy? Use the <a href="contact.html">contact form</a> or reach us on <a href="https://substack.com/@tshegofatsomamphoko" target="_blank">Substack</a>.</p>
+  </div>
+
+  
+  <!-- SPOTIFY NOW PLAYING -->
+  <div class="spotify-bar" id="spotify-bar">
+    <svg class="spotify-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-label">Now Playing</span>
+    <span class="spotify-track" id="spotify-track">
+      <!-- Track info loads here -->
+      <a href="https://open.spotify.com" target="_blank">Open Spotify</a>
+    </span>
+    <div class="spotify-bars">
+      <span></span><span></span><span></span><span></span>
+    </div>
   </div>
 
   <footer class="site-footer">
@@ -2313,6 +2394,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const theme = getActiveTheme();
   applySeasonalTheme(theme);
 });
+
+</script>
+<script>
+
+// ── Spotify Now Playing ──────────────────────────────
+// To update your now-playing track:
+// 1. Go to Spotify, right-click any song → Share → Copy Song Link
+// 2. Update SPOTIFY_TRACK below with the song name, artist, and link
+// This updates across the whole site when you change it here
+// For automatic real-time sync, a backend server is required (see FAQ)
+
+const SPOTIFY_CONFIG = {
+  trackName: null,   // e.g. "Flowers - Miley Cyrus"  
+  trackUrl: null,    // e.g. "https://open.spotify.com/track/..."
+  active: false      // set to true when you want to show it
+};
+
+(function initSpotify() {
+  const bar = document.getElementById('spotify-bar');
+  const trackEl = document.getElementById('spotify-track');
+  if (!bar || !trackEl) return;
+
+  if (SPOTIFY_CONFIG.active && SPOTIFY_CONFIG.trackName) {
+    trackEl.innerHTML = SPOTIFY_CONFIG.trackUrl 
+      ? `<a href="${SPOTIFY_CONFIG.trackUrl}" target="_blank">${SPOTIFY_CONFIG.trackName}</a>`
+      : SPOTIFY_CONFIG.trackName;
+    bar.style.display = 'flex';
+  } else {
+    bar.style.display = 'none';
+  }
+})();
 
 </script>
 </body>
