@@ -1,0 +1,24 @@
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-date" id="live-date"></div>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="archive.html">Archive</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="search.html">Search</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="newsletter.html" class="nav-subscribe">Newsletter</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙 DARK</button>
+      </nav>
+    </div>
+    <div class="header-title-wrap">
+      <div class="header-rule"></div>
+      <h1 class="site-title"><a href="index.html" style="text-decoration:none;color:inherit;">The Red Herring Fallacy</a></h1>
+      <div class="header-rule"></div>
+      <p class="site-tagline">Dispatches from the margins of the argument</p>
+    </div>
+  </header>
