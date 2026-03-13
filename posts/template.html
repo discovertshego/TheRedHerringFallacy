@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YT4XEJZHRM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YT4XEJZHRM');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article Title — The Red Herring Fallacy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+/* ============================================
+   RED HERRING FALLACY — Main Stylesheet
+   Bold editorial: red, black, white
+   Auto dark/light mode: dark 18:00–06:00, light 06:00–18:00
+   ============================================ */
+
+:root {
+  --red: #D7000F;
+  --red-dark: #A3000B;
+  --red-muted: #8B0000;
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* DARK MODE (default — 18:00 to 06:00) */
+  --black: #0A0A0A;
+  --off-black: #111111;
+  --charcoal: #1E1E1E;
+  --white: #F5F0EB;
+  --off-white: #EDE8E0;
+  --gray-light: #D4CFC8;
+  --gray-mid: #888078;
+
+  /* Semantic tokens */
+  --bg: var(--black);
+  --bg-card: var(--off-black);
+  --bg-card-hover: var(--charcoal);
+  --bg-card-alt: #0D0D0D;
+  --text-primary: var(--white);
+  --text-secondary: var(--gray-light);
+  --text-muted: var(--gray-mid);
+  --border: var(--charcoal);
+  --border-mid: #2A2A2A;
+  --placeholder-bg: #1A1A1A;
+  --subscribe-note: rgba(255,255,255,0.65);
+  --subscribe-body: rgba(255,255,255,0.8);
+  --subscribe-kicker: rgba(255,255,255,0.6);
+  --mode-icon: '🌙';
+}
+
+/* LIGHT MODE — applied by JS at 06:00, or manual toggle */
+html.light-mode {
+  --black: #FAFAF7;
+  --off-black: #F2EFE8;
+  --charcoal: #E8E4DC;
+  --white: #1A1410;
+  --off-white: #2A2420;
+  --gray-light: #4A4540;
+  --gray-mid: #7A7570;
+
+  --bg: var(--black);
+  --bg-card: var(--off-black);
+  --bg-card-hover: var(--charcoal);
+  --bg-card-alt: #EEEAE0;
+  --text-primary: var(--white);
+  --text-secondary: var(--gray-light);
+  --text-muted: var(--gray-mid);
+  --border: var(--charcoal);
+  --border-mid: #D8D4CC;
+  --placeholder-bg: #E4E0D8;
+  --subscribe-note: rgba(0,0,0,0.55);
+  --subscribe-body: rgba(0,0,0,0.75);
+  --subscribe-kicker: rgba(0,0,0,0.5);
+  --mode-icon: '☀️';
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON
+   ============================================ */
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.theme-toggle:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* Mode transition */
+html {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.topic-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 1.2rem;
+  margin-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.topic-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.topic-nav a:hover { color: var(--red); }
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.site-header {
+  background: var(--bg);
+  border-bottom: 3px solid var(--red);
+  padding: 1.5rem 2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.header-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.header-nav a:hover { color: var(--text-primary); }
+
+.nav-subscribe {
+  background: var(--red);
+  color: var(--white) !important;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  transition: background 0.2s !important;
+}
+
+.nav-subscribe:hover { background: var(--red-dark) !important; }
+
+.header-title-wrap {
+  text-align: center;
+  padding: 0.5rem 0 1.2rem;
+}
+
+.header-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gray-mid), transparent);
+  margin: 0.6rem auto;
+  width: 80%;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.site-title span { color: var(--red); }
+
+.site-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+
+.hero-post {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.hero-category {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+}
+
+.hero-excerpt {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-dot { color: var(--red); }
+
+.read-more-btn {
+  display: inline-block;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 0.7rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.read-more-btn:hover {
+  background: var(--red);
+  color: var(--text-primary);
+}
+
+.hero-image-wrap { position: relative; }
+
+.hero-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--bg-card-hover);
+  border: 1px dashed var(--gray-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  position: relative;
+}
+
+.hero-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid var(--red-muted);
+  z-index: -1;
+}
+
+/* ============================================
+   SECTION DIVIDER
+   ============================================ */
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  color: var(--red);
+  font-size: 0.6rem;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--bg-card-hover);
+}
+
+.divider-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   POST GRID
+   ============================================ */
+
+.post-grid-section {
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border);
+}
+
+.post-card {
+  background: var(--bg-card);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.post-card:hover { background: var(--bg-card-hover); }
+
+.post-card-image { position: relative; overflow: hidden; }
+
+.post-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--placeholder-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  transition: transform 0.3s;
+}
+
+.post-card:hover .post-image-placeholder { transform: scale(1.03); }
+
+.post-card-tag {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--red);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+}
+
+.post-card--podcast .post-card-tag,
+.post-card--quote .post-card-tag {
+  position: static;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.post-card-tag--sub {
+  background: var(--bg);
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+
+.post-card-body { padding: 1.5rem; }
+
+.post-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.post-card-excerpt {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+}
+
+.post-card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Podcast Card */
+.post-card--podcast { border-left: 3px solid var(--red); }
+
+.podcast-player-mock {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1rem 0;
+  background: var(--bg-card-hover);
+  padding: 0.7rem;
+}
+
+.play-btn {
+  width: 32px;
+  height: 32px;
+  background: var(--red);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.play-btn:hover { background: var(--red-dark); }
+
+.podcast-bar {
+  flex: 1;
+  height: 3px;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--gray-mid);
+  position: relative;
+}
+
+.podcast-progress {
+  width: 30%;
+  height: 100%;
+  background: var(--red);
+}
+
+.podcast-duration {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Quote Card */
+.post-card--quote { border-top: 3px solid var(--red); }
+
+.featured-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  margin: 0.5rem 0 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--red);
+}
+
+.quote-source {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+/* Locked Card */
+.locked-image {
+  font-size: 2rem;
+  color: var(--gray-mid) !important;
+  background: var(--bg-card-alt) !important;
+}
+
+.lock-cta {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--red);
+  letter-spacing: 0.06em;
+  margin-top: 0.5rem;
+  border-bottom: 1px solid var(--red);
+  transition: opacity 0.2s;
+}
+
+.lock-cta:hover { opacity: 0.7; }
+
+/* Video Card */
+.video-placeholder {
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--bg-card-alt) !important;
+}
+
+.video-play-icon {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  font-size: 1.1rem;
+  border-radius: 50%;
+}
+
+/* ============================================
+   SUBSCRIBE
+   ============================================ */
+
+.subscribe-section {
+  background: var(--red);
+  padding: 5rem 2rem;
+  margin: 0;
+}
+
+.subscribe-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subscribe-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--subscribe-kicker);
+  margin-bottom: 1rem;
+}
+
+.subscribe-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.subscribe-body {
+  font-size: 1rem;
+  color: var(--subscribe-body);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto 1rem;
+}
+
+.subscribe-input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  background: var(--bg);
+  border: 2px solid var(--black);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.subscribe-input::placeholder { color: var(--text-muted); }
+
+.subscribe-btn {
+  padding: 0.9rem 1.5rem;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.subscribe-btn:hover { background: var(--off-white); }
+
+.subscribe-note {
+  font-size: 0.82rem;
+  color: var(--subscribe-note);
+}
+
+.subscribe-note a {
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--text-primary); }
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  width: 100%;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   ARTICLE PAGE
+   ============================================ */
+
+.article-header {
+  max-width: 760px;
+  margin: 4rem auto 3rem;
+  padding: 0 2rem;
+  border-left: 3px solid var(--red);
+}
+
+.article-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.article-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+}
+
+.article-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.article-meta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.article-cover {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+}
+
+.article-cover img,
+.article-cover .cover-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+.cover-placeholder {
+  background: var(--bg-card-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.article-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.article-body p {
+  margin-bottom: 1.6rem;
+  color: var(--off-white);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+.article-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2.5rem 0 1rem;
+}
+
+.article-body h3 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin: 2rem 0 0.8rem;
+}
+
+.article-body blockquote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--red);
+  background: var(--bg-card-hover);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.article-body blockquote cite {
+  display: block;
+  margin-top: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-style: normal;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .post-grid { grid-template-columns: 1fr; }
+  .header-nav { gap: 1rem; }
+  .subscribe-form { flex-direction: column; }
+  .subscribe-btn { width: 100%; }
+  .site-title { font-size: 2.5rem; }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-post, .post-grid-section {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.post-card {
+  animation: fadeUp 0.5s ease forwards;
+  animation-delay: calc(var(--i, 0) * 0.07s);
+}
+
+</style>
+</head>
+<body>
+<div id="reading-progress"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+        <div class="header-top">
+      <div class="header-date" id="live-date"></div>
+      <nav class="header-nav">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../search.html">Search</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../newsletter.html" class="nav-subscribe">Newsletter</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙 DARK</button>
+      </nav>
+    </div>
+    </div>
+
+  <!-- COVER IMAGE: Replace div with <img src="your-image.jpg" alt="..."> -->
+  <div class="article-cover">
+    <div class="cover-placeholder">Add cover image here — replace this div with an img tag</div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <!-- EDIT: Replace everything below with your content -->
+
+    <p>
+      Start your piece here. This is your opening paragraph — make it land. No throat-clearing, no preamble. The reader already clicked; now give them something they didn't expect.
+    </p>
+
+    <h2>A Section Heading</h2>
+
+    <p>
+      Continue your argument here. Each paragraph should do one thing well. State it, back it, move on.
+    </p>
+
+    <!-- PULL QUOTE: Use this for emphasis -->
+    <blockquote>
+      "The sentence you want the reader to remember goes here. Something quotable, something that crystallises the argument."
+      <cite>— Your name or context</cite>
+    </blockquote>
+
+    <p>
+      More body copy. You can keep writing naturally — the formatting handles itself. Add as many paragraphs, headings, and blockquotes as you need.
+    </p>
+
+    <h3>A Sub-section or Aside</h3>
+
+    <p>
+      Use h3 for secondary headings — they come out in italics, good for asides or nuance within a section.
+    </p>
+
+    <!-- VIDEO EMBED: Uncomment and paste your YouTube/Vimeo embed code -->
+    <!--
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:2rem 0;">
+      <iframe
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+        allowfullscreen>
+      </iframe>
+    </div>
+    -->
+
+    <!-- PODCAST EMBED: Uncomment and paste your embed URL -->
+    <!--
+    <div style="margin:2rem 0;">
+      <iframe
+        src="YOUR_PODCAST_EMBED_URL"
+        width="100%" height="180"
+        style="border:0;"
+        allow="autoplay">
+      </iframe>
+    </div>
+    -->
+
+    <!-- IMAGE: Replace src with your image path -->
+    <!--
+    <figure style="margin:2.5rem 0;">
+      <img src="../images/your-image.jpg" alt="Description" style="width:100%;display:block;" />
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#888078;margin-top:0.5rem;">
+        Caption goes here.
+      </figcaption>
+    </figure>
+    -->
+
+    <p>
+      Your closing paragraph. Land the argument. Don't trail off — make a statement, ask a question, or issue a challenge. Readers remember the last thing they read.
+    </p>
+
+  </article>
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span class="share-label">Share this piece</span>
+    <button class="share-btn" onclick="shareTwitter()" title="Share on X">𝕏 Post</button>
+    <button class="share-btn" onclick="shareWhatsApp()" title="Share on WhatsApp">WhatsApp</button>
+    <button class="share-btn" onclick="copyLink(this)" title="Copy link">Copy Link</button>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-label">More from The Red Herring Fallacy</div>
+      <div class="related-grid"><div class="related-empty">More articles coming soon.</div></div>
+      <div class="related-substack">
+        <a href="https://substack.com/@tshegofatsomamphoko" target="_blank" class="related-substack-link">Discuss this piece on Substack →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-title">The Red Herring Fallacy</div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-copy">© 2026 The Red Herring Fallacy. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+// ============================================
+// RED HERRING FALLACY — Main JS
+// Auto light/dark mode: light 06:00–18:00, dark 18:00–06:00
+// Manual override via toggle button
+// ============================================
+
+// ── Theme Logic ─────────────────────────────
+
+function getAutoTheme() {
+  const hour = new Date().getHours();
+  return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+}
+
+function applyTheme(theme, isManual = false) {
+  const html = document.documentElement;
+  const btn = document.getElementById('theme-btn');
+
+  if (theme === 'light') {
+    html.classList.add('light-mode');
+    if (btn) btn.innerHTML = '☀️ LIGHT';
+  } else {
+    html.classList.remove('light-mode');
+    if (btn) btn.innerHTML = '🌙 DARK';
+  }
+
+  if (isManual) {
+    // Store manual override with expiry — clears at next auto-switch boundary
+    sessionStorage.setItem('theme-override', theme);
+  }
+}
+
+function toggleTheme() {
+  const isLight = document.documentElement.classList.contains('light-mode');
+  applyTheme(isLight ? 'dark' : 'light', true);
+}
+
+function initTheme() {
+  const override = sessionStorage.getItem('theme-override');
+  const theme = override || getAutoTheme();
+  applyTheme(theme);
+}
+
+// Auto-switch: check every minute, apply if hour boundary crossed
+function scheduleAutoSwitch() {
+  setInterval(() => {
+    // Only auto-switch if no manual override in this session
+    if (!sessionStorage.getItem('theme-override')) {
+      applyTheme(getAutoTheme());
+    }
+  }, 60 * 1000); // check every minute
+
+  // Clear override at 06:00 and 18:00 so auto resumes
+  setInterval(() => {
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    if ((h === 6 || h === 18) && m === 0) {
+      sessionStorage.removeItem('theme-override');
+      applyTheme(getAutoTheme());
+    }
+  }, 60 * 1000);
+}
+
+// ── Init ─────────────────────────────────────
+initTheme();
+scheduleAutoSwitch();
+
+// ── Live date in header ──────────────────────
+const dateEl = document.getElementById('live-date');
+if (dateEl) {
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  dateEl.textContent = now.toLocaleDateString('en-US', options).toUpperCase();
+}
+
+// ── Subscribe form handler ───────────────────
+function handleSubscribe(e) {
+  e.preventDefault();
+  const form = e.target;
+  const input = form.querySelector('.subscribe-input');
+  const btn = form.querySelector('.subscribe-btn');
+  const email = input.value;
+
+  btn.textContent = 'Subscribed ✓';
+  btn.style.background = 'var(--text-primary)';
+  btn.style.color = 'var(--bg)';
+  input.value = '';
+  input.placeholder = `${email} — you're in.`;
+
+  setTimeout(() => {
+    btn.textContent = 'Subscribe Free';
+    btn.style.background = '';
+    btn.style.color = '';
+    input.placeholder = 'your@email.com';
+  }, 4000);
+}
+
+// ── Stagger post card animations ─────────────
+document.querySelectorAll('.post-card').forEach((card, i) => {
+  card.style.setProperty('--i', i);
+});
+
+// ── Podcast play button ───────────────────────
+document.querySelectorAll('.play-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isPlaying = btn.textContent === '❚❚';
+    btn.textContent = isPlaying ? '▶' : '❚❚';
+  });
+});
+
+</script>
+<aside id="toc" class="toc-sidebar"><div class="toc-label">In this piece</div><nav id="toc-nav"></nav></aside>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div id="newsletter-popup" class="nl-popup"><button class="nl-close" onclick="closePopup()">✕</button><div class="nl-popup-kicker">Don't miss the next piece</div><h3 class="nl-popup-title">The Red Herring Fallacy</h3><p class="nl-popup-body">Essays on power, argument, and everything in between. Free on Substack.</p><a href="https://substack.com/@tshegofatsomamphoko" target="_blank" class="nl-popup-btn" onclick="closePopup()">Subscribe on Substack →</a><button class="nl-popup-dismiss" onclick="closePopup()">Maybe later</button></div>
+<div id="nl-overlay" onclick="closePopup()"></div>
+</body>
+</html>

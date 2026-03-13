@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>What We Refuse to Protect — The Red Herring Fallacy</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="A one-year-old girl. Her grandfather. A system that keeps failing children. Tshegofatso Mamphoko on child sexual abuse, the psychology of perpetrators, and the moral fracture we refuse to confront." />
+  <meta name="author" content="Tshegofatso Mamphoko" />
+  <meta name="keywords" content="child sexual abuse, rape, South Africa, justice system, feminist theory, child protection" />
+  <meta property="og:title" content="What We Refuse to Protect" />
+  <meta property="og:description" content="A one-year-old girl. Her grandfather. A system that keeps failing children. On child sexual abuse and the moral fracture we refuse to confront." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://discovertshego.github.io/TheRedHerringFallacy/posts/what-we-refuse-to-protect.html" />
+  <meta property="article:published_time" content="2026-01-06" />
+  <meta property="article:author" content="Tshegofatso Mamphoko" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What We Refuse to Protect" />
+  <meta name="twitter:description" content="A one-year-old girl. Her grandfather. A system that keeps failing children. On child sexual abuse and the moral fracture we refuse to confront." />
+
+  <link rel="canonical" href="https://discovertshego.github.io/TheRedHerringFallacy/posts/what-we-refuse-to-protect.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YT4XEJZHRM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YT4XEJZHRM');
+  </script>
+  <style>
+/* ============================================
+   RED HERRING FALLACY — Main Stylesheet
+   Bold editorial: red, black, white
+   Auto dark/light mode: dark 18:00–06:00, light 06:00–18:00
+   ============================================ */
+
+:root {
+  --red: #D7000F;
+  --red-dark: #A3000B;
+  --red-muted: #8B0000;
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* DARK MODE (default — 18:00 to 06:00) */
+  --black: #0A0A0A;
+  --off-black: #111111;
+  --charcoal: #1E1E1E;
+  --white: #F5F0EB;
+  --off-white: #EDE8E0;
+  --gray-light: #D4CFC8;
+  --gray-mid: #888078;
+
+  /* Semantic tokens */
+  --bg: var(--black);
+  --bg-card: var(--off-black);
+  --bg-card-hover: var(--charcoal);
+  --bg-card-alt: #0D0D0D;
+  --text-primary: var(--white);
+  --text-secondary: var(--gray-light);
+  --text-muted: var(--gray-mid);
+  --border: var(--charcoal);
+  --border-mid: #2A2A2A;
+  --placeholder-bg: #1A1A1A;
+  --subscribe-note: rgba(255,255,255,0.65);
+  --subscribe-body: rgba(255,255,255,0.8);
+  --subscribe-kicker: rgba(255,255,255,0.6);
+  --mode-icon: '🌙';
+}
+
+/* LIGHT MODE — applied by JS at 06:00, or manual toggle */
+html.light-mode {
+  --black: #FAFAF7;
+  --off-black: #F2EFE8;
+  --charcoal: #E8E4DC;
+  --white: #1A1410;
+  --off-white: #2A2420;
+  --gray-light: #4A4540;
+  --gray-mid: #7A7570;
+
+  --bg: var(--black);
+  --bg-card: var(--off-black);
+  --bg-card-hover: var(--charcoal);
+  --bg-card-alt: #EEEAE0;
+  --text-primary: var(--white);
+  --text-secondary: var(--gray-light);
+  --text-muted: var(--gray-mid);
+  --border: var(--charcoal);
+  --border-mid: #D8D4CC;
+  --placeholder-bg: #E4E0D8;
+  --subscribe-note: rgba(0,0,0,0.55);
+  --subscribe-body: rgba(0,0,0,0.75);
+  --subscribe-kicker: rgba(0,0,0,0.5);
+  --mode-icon: '☀️';
+}
+
+/* ============================================
+   THEME TOGGLE BUTTON
+   ============================================ */
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.theme-toggle:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* Mode transition */
+html {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.topic-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 1.2rem;
+  margin-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.topic-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.topic-nav a:hover { color: var(--red); }
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.site-header {
+  background: var(--bg);
+  border-bottom: 3px solid var(--red);
+  padding: 1.5rem 2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.header-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header-nav a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.header-nav a:hover { color: var(--text-primary); }
+
+.nav-subscribe {
+  background: var(--red);
+  color: var(--white) !important;
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  transition: background 0.2s !important;
+}
+
+.nav-subscribe:hover { background: var(--red-dark) !important; }
+
+.header-title-wrap {
+  text-align: center;
+  padding: 0.5rem 0 1.2rem;
+}
+
+.header-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gray-mid), transparent);
+  margin: 0.6rem auto;
+  width: 80%;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.site-title span { color: var(--red); }
+
+.site-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+
+.hero-post {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.hero-category {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+}
+
+.hero-excerpt {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.hero-dot { color: var(--red); }
+
+.read-more-btn {
+  display: inline-block;
+  border: 1px solid var(--red);
+  color: var(--red);
+  padding: 0.7rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.read-more-btn:hover {
+  background: var(--red);
+  color: var(--text-primary);
+}
+
+.hero-image-wrap { position: relative; }
+
+.hero-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--bg-card-hover);
+  border: 1px dashed var(--gray-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  position: relative;
+}
+
+.hero-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid var(--red-muted);
+  z-index: -1;
+}
+
+/* ============================================
+   SECTION DIVIDER
+   ============================================ */
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  color: var(--red);
+  font-size: 0.6rem;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--bg-card-hover);
+}
+
+.divider-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   POST GRID
+   ============================================ */
+
+.post-grid-section {
+  max-width: 1200px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--border);
+}
+
+.post-card {
+  background: var(--bg-card);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.post-card:hover { background: var(--bg-card-hover); }
+
+.post-card-image { position: relative; overflow: hidden; }
+
+.post-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--placeholder-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  transition: transform 0.3s;
+}
+
+.post-card:hover .post-image-placeholder { transform: scale(1.03); }
+
+.post-card-tag {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  background: var(--red);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+}
+
+.post-card--podcast .post-card-tag,
+.post-card--quote .post-card-tag {
+  position: static;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.post-card-tag--sub {
+  background: var(--bg);
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+
+.post-card-body { padding: 1.5rem; }
+
+.post-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.post-card-excerpt {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+}
+
+.post-card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Podcast Card */
+.post-card--podcast { border-left: 3px solid var(--red); }
+
+.podcast-player-mock {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 1rem 0;
+  background: var(--bg-card-hover);
+  padding: 0.7rem;
+}
+
+.play-btn {
+  width: 32px;
+  height: 32px;
+  background: var(--red);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.play-btn:hover { background: var(--red-dark); }
+
+.podcast-bar {
+  flex: 1;
+  height: 3px;
+  background: var(--bg-card-hover);
+  border: 1px solid var(--gray-mid);
+  position: relative;
+}
+
+.podcast-progress {
+  width: 30%;
+  height: 100%;
+  background: var(--red);
+}
+
+.podcast-duration {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Quote Card */
+.post-card--quote { border-top: 3px solid var(--red); }
+
+.featured-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  margin: 0.5rem 0 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--red);
+}
+
+.quote-source {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: normal;
+}
+
+/* Locked Card */
+.locked-image {
+  font-size: 2rem;
+  color: var(--gray-mid) !important;
+  background: var(--bg-card-alt) !important;
+}
+
+.lock-cta {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--red);
+  letter-spacing: 0.06em;
+  margin-top: 0.5rem;
+  border-bottom: 1px solid var(--red);
+  transition: opacity 0.2s;
+}
+
+.lock-cta:hover { opacity: 0.7; }
+
+/* Video Card */
+.video-placeholder {
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--bg-card-alt) !important;
+}
+
+.video-play-icon {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  font-size: 1.1rem;
+  border-radius: 50%;
+}
+
+/* ============================================
+   SUBSCRIBE
+   ============================================ */
+
+.subscribe-section {
+  background: var(--red);
+  padding: 5rem 2rem;
+  margin: 0;
+}
+
+.subscribe-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subscribe-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--subscribe-kicker);
+  margin-bottom: 1rem;
+}
+
+.subscribe-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.subscribe-body {
+  font-size: 1rem;
+  color: var(--subscribe-body);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto 1rem;
+}
+
+.subscribe-input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  background: var(--bg);
+  border: 2px solid var(--black);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.subscribe-input::placeholder { color: var(--text-muted); }
+
+.subscribe-btn {
+  padding: 0.9rem 1.5rem;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.subscribe-btn:hover { background: var(--off-white); }
+
+.subscribe-note {
+  font-size: 0.82rem;
+  color: var(--subscribe-note);
+}
+
+.subscribe-note a {
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--text-primary); }
+
+.footer-copy {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  width: 100%;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   ARTICLE PAGE
+   ============================================ */
+
+.article-header {
+  max-width: 760px;
+  margin: 4rem auto 3rem;
+  padding: 0 2rem;
+  border-left: 3px solid var(--red);
+}
+
+.article-category {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.article-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+}
+
+.article-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.article-meta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.article-cover {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+}
+
+.article-cover img,
+.article-cover .cover-placeholder {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+.cover-placeholder {
+  background: var(--bg-card-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.article-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.article-body p {
+  margin-bottom: 1.6rem;
+  color: var(--off-white);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+.article-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2.5rem 0 1rem;
+}
+
+.article-body h3 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  margin: 2rem 0 0.8rem;
+}
+
+.article-body blockquote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--red);
+  background: var(--bg-card-hover);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.article-body blockquote cite {
+  display: block;
+  margin-top: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-style: normal;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .post-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .post-grid { grid-template-columns: 1fr; }
+  .header-nav { gap: 1rem; }
+  .subscribe-form { flex-direction: column; }
+  .subscribe-btn { width: 100%; }
+  .site-title { font-size: 2.5rem; }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-post, .post-grid-section {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.post-card {
+  animation: fadeUp 0.5s ease forwards;
+  animation-delay: calc(var(--i, 0) * 0.07s);
+}
+
+
+/* Reading Progress Bar */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--red);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* Back to Top */
+#back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 999;
+  font-family: var(--font-mono);
+}
+#back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#back-to-top:hover { background: var(--red-dark); }
+
+/* Share Bar */
+.share-bar {
+  max-width: 680px;
+  margin: 0 auto 2rem;
+  padding: 1.2rem 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.share-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-right: 0.5rem;
+}
+.share-btn {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.share-btn:hover { border-color: var(--red); color: var(--red); }
+.share-btn.copied { background: var(--red); border-color: var(--red); color: var(--white); }
+
+/* Table of Contents */
+.toc-sidebar {
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.toc-sidebar.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.toc-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+}
+#toc-nav a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-left: 2px solid var(--border);
+  padding-left: 0.8rem;
+  transition: all 0.2s;
+  line-height: 1.4;
+}
+#toc-nav a:hover, #toc-nav a.active {
+  color: var(--text-primary);
+  border-left-color: var(--red);
+}
+@media (max-width: 1200px) {
+  .toc-sidebar { display: none; }
+}
+
+/* Newsletter Popup */
+#nl-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+#nl-overlay.visible { display: block; }
+.nl-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--red);
+  padding: 2.5rem 2rem;
+  width: 90%;
+  max-width: 400px;
+  z-index: 1001;
+  text-align: center;
+}
+.nl-popup.visible { display: block; animation: fadeUp 0.3s ease; }
+.nl-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.nl-close:hover { color: var(--red); }
+.nl-popup-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+}
+.nl-popup-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+.nl-popup-body {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.nl-popup-btn {
+  display: block;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  transition: background 0.2s;
+}
+.nl-popup-btn:hover { background: var(--red-dark); }
+.nl-popup-dismiss {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nl-popup-dismiss:hover { color: var(--text-primary); }
+
+/* Related Articles + Comments */
+.related-section {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+}
+.related-inner { max-width: 900px; margin: 0 auto; }
+.related-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  margin-bottom: 2rem;
+}
+.related-card {
+  background: var(--bg);
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.related-card:hover { background: var(--bg-card-hover); }
+.related-card-cat {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.4rem;
+}
+.related-card-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.related-empty {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  background: var(--bg);
+  grid-column: 1 / -1;
+}
+.related-substack {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.related-substack-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  text-decoration: none;
+  border-bottom: 1px solid var(--red);
+  transition: opacity 0.2s;
+}
+.related-substack-link:hover { opacity: 0.7; }
+@media (max-width: 600px) {
+  .related-grid { grid-template-columns: 1fr; }
+}
+
+
+/* Disqus Comments */
+.disqus-section {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+.disqus-inner {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+.disqus-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+
+
+/* Cookie Banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-card);
+  border-top: 3px solid var(--red);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 9998;
+  flex-wrap: wrap;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+#cookie-banner.visible { transform: translateY(0); }
+.cookie-text { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; flex: 1; }
+.cookie-text a { color: var(--red); border-bottom: 1px solid var(--red); }
+.cookie-btns { display: flex; gap: 0.8rem; flex-shrink: 0; }
+.cookie-accept { background: var(--red); color: var(--white); border: none; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.2rem; cursor: pointer; }
+.cookie-decline { background: none; border: 1px solid var(--border); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.2rem; cursor: pointer; }
+
+
+
+    .article-body .data-block {
+      background: var(--bg-card);
+      border-left: 3px solid var(--red);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+    }
+    .article-body .data-block h4 {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+    .article-body .data-block p {
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+    .article-body .data-block p:last-child { margin-bottom: 0; }
+    .article-body .data-block strong {
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+    .author-bio {
+      max-width: 680px;
+      margin: 0 auto 5rem;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .bio-initial {
+      width: 52px;
+      height: 52px;
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .bio-text h4 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+    .bio-text p {
+      font-size: 0.88rem !important;
+      color: var(--text-muted) !important;
+      line-height: 1.65 !important;
+      margin-bottom: 0 !important;
+    }
+    .article-tags {
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      padding: 0 2rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.6rem;
+    }
+  
+.article-body .data-block { background:var(--bg-card);border-left:3px solid var(--red);padding:1.5rem 2rem;margin:2.5rem 0; }
+.article-body .data-block h4 { font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:1rem; }
+.article-body .data-block p { margin-bottom:0.6rem;font-size:0.95rem;color:var(--text-secondary); }
+.article-body .data-block strong { color:var(--text-primary);font-weight:400; }
+.author-bio { max-width:680px;margin:0 auto 5rem;padding:2rem;border-top:1px solid var(--border);display:flex;gap:1.5rem;align-items:flex-start; }
+.bio-initial { width:52px;height:52px;background:var(--red);color:var(--white);font-family:var(--font-display);font-size:1.6rem;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+.bio-text h4 { font-family:var(--font-serif);font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:0.4rem; }
+.bio-text p { font-size:0.88rem!important;color:var(--text-muted)!important;line-height:1.65!important;margin-bottom:0!important; }
+.article-tags { max-width:680px;margin:0 auto 2rem;padding:0 2rem;display:flex;gap:0.5rem;flex-wrap:wrap; }
+.tag { font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);padding:0.25rem 0.6rem; }
+.disqus-section { max-width:900px;margin:0 auto 4rem;padding:0 2rem; }
+.disqus-inner { border-top:1px solid var(--border);padding-top:2rem; }
+.disqus-label { font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem; }
+#reading-progress { position:fixed;top:0;left:0;width:0%;height:3px;background:var(--red);z-index:9999;transition:width 0.1s linear; }
+#back-to-top { position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;background:var(--red);color:var(--white);border:none;font-size:1.1rem;cursor:pointer;opacity:0;transform:translateY(10px);transition:opacity 0.3s,transform 0.3s;z-index:999;font-family:var(--font-mono); }
+#back-to-top.visible { opacity:1;transform:translateY(0); }
+.share-bar { max-width:680px;margin:0 auto 2rem;padding:1.2rem 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap; }
+.share-label { font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-right:0.5rem; }
+.share-btn { font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;border:1px solid var(--border);background:none;color:var(--text-muted);padding:0.4rem 1rem;cursor:pointer;transition:all 0.2s; }
+.share-btn:hover { border-color:var(--red);color:var(--red); }
+.share-btn.copied { background:var(--red);border-color:var(--red);color:var(--white); }
+</style>
+</head>
+<body>
+<div id="reading-progress"></div>
+
+
+  <!-- TRIGGER WARNING -->
+  <div style="max-width:760px;margin:2rem auto 0;padding:0 2rem;">
+    <div style="background:var(--bg-card);border-left:3px solid var(--red);padding:1rem 1.5rem;font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);">
+      Content Warning: This article discusses child sexual abuse in explicit terms. It contains references to a real case involving a minor.
+    </div>
+  </div>
+
+  <!-- ARTICLE HEADER -->
+  <div class="article-header">
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.5rem;">
+      <div class="article-category">Law &amp; Justice · Child Protection</div>
+      <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;color:var(--text-muted);text-transform:uppercase;">Issue 003</div>
+    </div>
+    <h1 class="article-title">What We Refuse to Protect</h1>
+    <p class="article-subtitle">On child sexual abuse, the psychology of perpetrators, and the moral fracture we have decided to live with.</p>
+    <div class="article-meta">
+      <span class="hero-author">By Tshegofatso Mamphoko</span>
+      <span class="hero-dot">·</span>
+      <span class="hero-date">January 6, 2026</span>
+      <span class="hero-dot">·</span>
+      <span>9 min read</span>
+    </div>
+  </div>
+
+  <div class="article-cover">
+    <img src="protect-cover.jpg" alt="Invisible Fear — painting depicting a child in fear" style="width:100%;display:block;object-fit:cover;max-height:560px;" />
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--text-muted);margin-top:0.5rem;font-style:italic;">Invisible Fear — artist unknown</p>
+  </div>
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <p>
+      There is a particular kind of anger that does not arrive loudly. It settles. It moves into the chest and stays there — a dull, relentless pressure that comes from knowing something is being done to a child, somewhere, by an adult who made a choice, and that the systems built to prevent it failed again. This piece comes from that place. Not from outrage performed for an audience, but from the kind that makes your hands shake while you write.
+    </p>
+
+    <p>
+      In late December 2025, a 58-year-old man appeared in the Johannesburg Magistrate's Court on charges of rape and attempted murder. The complainant is his one-year-old granddaughter. The child's mother had left her in his care during the end-of-year period. When she returned to collect her, she found her bleeding and critically injured. The child was hospitalised. It was confirmed that the accused is HIV-positive. A bail hearing was scheduled for January 12, 2026.
+    </p>
+
+    <p>
+      That is the case, stated plainly. I will not soften it. Softening it is part of how we got here.
+    </p>
+
+    <h2>This Is Not an Anomaly</h2>
+
+    <p>
+      The instinct, when confronted with a case this extreme, is to treat it as aberrant — as a failure so singular and so monstrous that it sits outside the normal order of things. That instinct is wrong, and it is dangerous. Cases like this are not evidence of individual monstrosity. They are evidence of a system that has consistently failed to interrupt a pattern.
+    </p>
+
+    <p>
+      The World Health Organization estimates that approximately one in five women and one in thirteen men report having experienced child sexual abuse. Most researchers consider this an undercount. The primary barriers to reporting are fear, stigma, systemic disbelief, and — particularly in South African and broader African contexts — a cultural framework that treats family matters as private, to be resolved internally rather than reported to authorities. When reporting does occur, the pipeline from report to conviction is catastrophically narrow.
+    </p>
+
+    <div class="data-block">
+      <h4>South Africa — Child Sexual Abuse: The Pipeline</h4>
+      <p><strong>106,000+</strong> — child rape cases reported across six financial years, 2018–2024</p>
+      <p><strong>1,710</strong> — cases brought to trial over four years, 2020–2024</p>
+      <p><strong>~1.6%</strong> — estimated ratio of reported cases that reached trial</p>
+      <p><strong>1 in 9</strong> — estimated proportion of rapes ever reported to police (adult and child combined)</p>
+      <p><strong>Source:</strong> South African Police Service Annual Reports; National Prosecuting Authority data</p>
+    </div>
+
+    <p>
+      These numbers do not represent a justice system under strain. They represent a justice system that has, in practical terms, decided that the sexual abuse of children is not a priority it is willing to resource adequately.
+    </p>
+
+    <h2>The Psychology of Perpetrators</h2>
+
+    <p>
+      Child sexual abuse is consistently misrepresented as impulsive — as a failure of control in a moment of weakness. The research does not support this. Studies on child sexual offending — including foundational work by Abel and Harlow (2001), and more recent meta-analyses in the Journal of Sexual Aggression — show that most perpetrators engage in deliberate, planned behaviour over extended periods. This is not a crime of impulse. It is a crime of calculation.
+    </p>
+
+    <p>
+      Grooming — the process by which perpetrators gain access to and silence victims — involves the systematic erosion of boundaries, the exploitation of trust, and the normalisation of harm over time. It does not look predatory from the outside. It looks like affection, like favouritism, like a grandfather who loves his grandchild. That is the point. The concealment is not incidental to the crime. It is part of it.
+    </p>
+
+    <p>
+      Research identifies several consistent psychological patterns among child sexual offenders. Empathy deficits are common — not an inability to recognise emotion in others, but a motivated refusal to extend moral consideration to children as full human beings. Cognitive distortions allow perpetrators to rationalise behaviour, minimise harm, attribute implied consent where none exists, or shift blame to the victim. Power and control motivations are central: children are targeted specifically because of their dependency and their limited capacity to resist or report. And a significant proportion of perpetrators report histories of abuse themselves — a fact that establishes risk pathways without establishing excuse. Trauma shapes behaviour. It does not dissolve responsibility.
+    </p>
+
+    <h2>The Language We Use and the Language We Refuse</h2>
+
+    <p>
+      There is a growing tendency in certain online spaces to replace the term "paedophile" with the clinical euphemism "minor-attracted person" — language designed to neutralise, to medicalise, to extend the kind of humanising framing that positions the perpetrator's internal experience as the relevant object of consideration. I reject this framing entirely, and I want to be clear about why.
+    </p>
+
+    <p>
+      The impulse to soften the language around perpetrators of child sexual abuse is not compassion. It is a form of moral evasion. Language shapes what we permit ourselves to think, and what we permit ourselves to think shapes what systems we build, what laws we pass, what resources we allocate, and how many children we are collectively willing to leave unprotected. Calling something by its name is not cruelty. It is a precondition for confronting it.
+    </p>
+
+    <p>
+      The man in the Johannesburg courtroom is a rapist and a child sexual abuser. He is also someone's grandfather — which is not a mitigating detail, but an aggravating one. He occupied a position of absolute trust. He exploited it against the most vulnerable possible victim. The language that describes this should carry the weight of what it describes.
+    </p>
+
+    <h2>For the Mother. For the Child.</h2>
+
+    <p>
+      There is a grief that attaches to mothers of abused children that has almost no language adequate to it. It is not grief in the conventional sense — not the clean, linear kind. It is the grief of replaying every decision, every moment of trust, every time you left and wondered whether you should have stayed. It is the grief of knowing that the person you trusted most with the thing you love most chose, deliberately, to destroy it. That kind of grief does not resolve. It reorganises a life around itself.
+    </p>
+
+    <p>
+      And the child — one year old, unable to speak, unable to explain what was done to her or by whom — is not resilient because resilience is a property of children. She is not resilient because she is untouched by what happened. If she recovers, it will be because she receives every resource, every form of skilled support, every careful intervention available. Resilience is not a trait. It is a product of adequate care. The question of whether she receives that care is a question about what this society is prepared to spend on a child it allowed to be harmed.
+    </p>
+
+    <blockquote>
+      "Resilience is not a trait. It is a product of adequate care. The question of whether she receives it is a question about what this society is prepared to spend on a child it allowed to be harmed."
+      <cite>— Tshegofatso Mamphoko, The Red Herring Fallacy</cite>
+    </blockquote>
+
+    <h2>What This Requires of Us</h2>
+
+    <p>
+      Writing about this is painful in a way that does not diminish with repetition. It is painful because these cases are not aberrations. They are a frequency. And we have, as a society, developed a remarkable capacity to absorb the frequency — to be outraged for the duration of a news cycle and then wait, quietly, for the next case.
+    </p>
+
+    <p>
+      The question is not whether we are horrified. Most people are horrified. The question is whether horror is doing any useful work, or whether it has become a substitute for the harder thing: sustained, resourced, structural intervention. Mandatory reporting frameworks with real consequences for non-compliance. Specialised prosecution units for sexual crimes against children, adequately staffed and funded. Judicial education on trauma and child testimony. Community structures that make reporting feel possible rather than punishing.
+    </p>
+
+    <p>
+      These are not radical proposals. They are the floor. We are not even at the floor.
+    </p>
+
+    <p>
+      I offer my deepest empathy to the mother and her child. I offer my deepest contempt to the system that made this possible — not just the individual act, but the conditions that surrounded it: the impunity, the access, the silence, the failure at every point where intervention was possible and didn't come.
+    </p>
+
+    <p>
+      Justice — whatever it looks like here — cannot restore what was taken. But it is still owed. And the fact that it is unlikely to be fully delivered is not a reason to stop demanding it. It is a reason to demand it louder.
+    </p>
+
+  </article>
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span class="share-label">Share this piece</span>
+    <button class="share-btn" onclick="shareTwitter()">𝕏 Post</button>
+    <button class="share-btn" onclick="shareWhatsApp()">WhatsApp</button>
+    <button class="share-btn" onclick="copyLink(this)">Copy Link</button>
+  </div>
+
+  <!-- TAGS -->
+  <div class="article-tags">
+    <span class="tag">Law &amp; Justice</span>
+    <span class="tag">Child Protection</span>
+    <span class="tag">South Africa</span>
+    <span class="tag">Feminist Theory</span>
+    <span class="tag">Psychology</span>
+  </div>
+
+  <!-- AUTHOR BIO -->
+  <div class="author-bio">
+    <div class="bio-initial">TM</div>
+    <div class="bio-text">
+      <h4>Tshegofatso Mamphoko</h4>
+      <p>Tshegofatso Mamphoko is a South African writer and the founder of The Red Herring Fallacy — a publication at the intersection of feminist theory, law, politics, and the arguments nobody wants to finish. She writes about power: who holds it, how it is justified, and what gets obscured in the process.</p>
+    </div>
+  </div>
+
+  <!-- DISQUS -->
+  <section class="disqus-section">
+    <div class="disqus-inner">
+      <div class="disqus-label">Join the conversation</div>
+      <div id="disqus_thread"></div>
+    </div>
+  </section>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://discovertshego.github.io/TheRedHerringFallacy/posts/what-we-refuse-to-protect.html';
+      this.page.identifier = '/posts/what-we-refuse-to-protect';
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://the-red-herring-fallacy.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+
+  <!-- RELATED ARTICLES -->
+  <section class="related-section">
+    <div class="related-inner">
+      <div class="related-label">More from The Red Herring Fallacy</div>
+      <div class="related-grid">
+        <a href="architecture-of-male-impunity.html" class="related-card">
+          <div class="related-card-cat">Feminist Theory · Law &amp; Justice</div>
+          <div class="related-card-title">The Architecture of Male Impunity</div>
+        </a>
+        <a href="when-men-lose-they-litigate.html" class="related-card">
+          <div class="related-card-cat">Feminist Theory · Law &amp; Justice</div>
+          <div class="related-card-title">When Men Lose, They Litigate</div>
+        </a>
+      </div>
+      <div class="related-substack">
+        <a href="https://substack.com/@tshegofatsomamphoko" target="_blank" class="related-substack-link">Discuss this piece on Substack →</a>
+      </div>
+    </div>
+  </section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-title">The Red Herring Fallacy</div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../archive.html">Archive</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../about.html">About</a>
+      </div>
+      <div class="footer-copy">© 2026 The Red Herring Fallacy. All rights reserved.</div>
+    </div>
+  </footer>
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:var(--bg-card);border-top:3px solid var(--red);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;z-index:9998;flex-wrap:wrap;transform:translateY(100%);transition:transform 0.4s ease;">
+  <p style="font-size:0.88rem;color:var(--text-muted);font-weight:300;flex:1;">We use cookies to analyse traffic. See our <a href="../subscription-terms.html" style="color:var(--red);border-bottom:1px solid var(--red);">terms</a>.</p>
+  <div style="display:flex;gap:0.8rem;">
+    <button onclick="acceptCookies()" style="background:var(--red);color:var(--white);border:none;font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.2rem;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="background:none;border:1px solid var(--border);color:var(--text-muted);font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.6rem 1.2rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<div id="newsletter-popup" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg-card);border:1px solid var(--border);border-top:3px solid var(--red);padding:2.5rem 2rem;width:90%;max-width:400px;z-index:1001;text-align:center;">
+  <button onclick="closePopup()" style="position:absolute;top:0.8rem;right:0.8rem;background:none;border:none;color:var(--text-muted);font-size:1rem;cursor:pointer;">✕</button>
+  <div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:0.8rem;">Don't miss the next piece</div>
+  <h3 style="font-family:var(--font-display);font-size:1.8rem;color:var(--text-primary);margin-bottom:0.8rem;">The Red Herring Fallacy</h3>
+  <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:1.5rem;line-height:1.6;">Free on Substack.</p>
+  <a href="https://substack.com/@tshegofatsomamphoko" target="_blank" onclick="closePopup()" style="display:block;background:var(--red);color:var(--white);font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.9rem;text-decoration:none;margin-bottom:0.8rem;">Subscribe on Substack →</a>
+  <button onclick="closePopup()" style="background:none;border:none;font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);cursor:pointer;">Maybe later</button>
+</div>
+<div id="nl-overlay" onclick="closePopup()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1000;"></div>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+
+// ============================================
+// RED HERRING FALLACY — Main JS
+// Auto light/dark mode: light 06:00–18:00, dark 18:00–06:00
+// Manual override via toggle button
+// ============================================
+
+// ── Theme Logic ─────────────────────────────
+
+function getAutoTheme() {
+  const hour = new Date().getHours();
+  return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+}
+
+function applyTheme(theme, isManual = false) {
+  const html = document.documentElement;
+  const btn = document.getElementById('theme-btn');
+
+  if (theme === 'light') {
+    html.classList.add('light-mode');
+    if (btn) btn.innerHTML = '☀️ LIGHT';
+  } else {
+    html.classList.remove('light-mode');
+    if (btn) btn.innerHTML = '🌙 DARK';
+  }
+
+  if (isManual) {
+    // Store manual override with expiry — clears at next auto-switch boundary
+    sessionStorage.setItem('theme-override', theme);
+  }
+}
+
+function toggleTheme() {
+  const isLight = document.documentElement.classList.contains('light-mode');
+  applyTheme(isLight ? 'dark' : 'light', true);
+}
+
+function initTheme() {
+  const override = sessionStorage.getItem('theme-override');
+  const theme = override || getAutoTheme();
+  applyTheme(theme);
+}
+
+// Auto-switch: check every minute, apply if hour boundary crossed
+function scheduleAutoSwitch() {
+  setInterval(() => {
+    // Only auto-switch if no manual override in this session
+    if (!sessionStorage.getItem('theme-override')) {
+      applyTheme(getAutoTheme());
+    }
+  }, 60 * 1000); // check every minute
+
+  // Clear override at 06:00 and 18:00 so auto resumes
+  setInterval(() => {
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    if ((h === 6 || h === 18) && m === 0) {
+      sessionStorage.removeItem('theme-override');
+      applyTheme(getAutoTheme());
+    }
+  }, 60 * 1000);
+}
+
+// ── Init ─────────────────────────────────────
+initTheme();
+scheduleAutoSwitch();
+
+// ── Live date in header ──────────────────────
+const dateEl = document.getElementById('live-date');
+if (dateEl) {
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  dateEl.textContent = now.toLocaleDateString('en-US', options).toUpperCase();
+}
+
+// ── Subscribe form handler ───────────────────
+function handleSubscribe(e) {
+  e.preventDefault();
+  const form = e.target;
+  const input = form.querySelector('.subscribe-input');
+  const btn = form.querySelector('.subscribe-btn');
+  const email = input.value;
+
+  btn.textContent = 'Subscribed ✓';
+  btn.style.background = 'var(--text-primary)';
+  btn.style.color = 'var(--bg)';
+  input.value = '';
+  input.placeholder = `${email} — you're in.`;
+
+  setTimeout(() => {
+    btn.textContent = 'Subscribe Free';
+    btn.style.background = '';
+    btn.style.color = '';
+    input.placeholder = 'your@email.com';
+  }, 4000);
+}
+
+// ── Stagger post card animations ─────────────
+document.querySelectorAll('.post-card').forEach((card, i) => {
+  card.style.setProperty('--i', i);
+});
+
+// ── Podcast play button ───────────────────────
+document.querySelectorAll('.play-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isPlaying = btn.textContent === '❚❚';
+    btn.textContent = isPlaying ? '▶' : '❚❚';
+  });
+});
+
+
+// ── Reading Progress Bar ─────────────────────
+window.addEventListener('scroll', () => {
+  const article = document.querySelector('.article-body');
+  if (!article) return;
+  const bar = document.getElementById('reading-progress');
+  const btt = document.getElementById('back-to-top');
+  const toc = document.getElementById('toc');
+
+  const articleTop = article.offsetTop;
+  const articleHeight = article.offsetHeight;
+  const scrolled = window.scrollY - articleTop;
+  const progress = Math.min(Math.max((scrolled / articleHeight) * 100, 0), 100);
+  if (bar) bar.style.width = progress + '%';
+
+  // Back to top
+  if (btt) btt.classList.toggle('visible', window.scrollY > 400);
+
+  // TOC visibility
+  if (toc) toc.classList.toggle('visible', window.scrollY > 300);
+
+  // Highlight active TOC item
+  const headings = document.querySelectorAll('.article-body h2');
+  headings.forEach(h => {
+    const link = document.querySelector(`#toc-nav a[href="#${h.id}"]`);
+    if (!link) return;
+    const top = h.getBoundingClientRect().top;
+    link.classList.toggle('active', top < 150 && top > -200);
+  });
+});
+
+// ── Build TOC ────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const headings = document.querySelectorAll('.article-body h2');
+  const tocNav = document.getElementById('toc-nav');
+  if (!tocNav || headings.length === 0) return;
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'section-' + i;
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    tocNav.appendChild(a);
+  });
+});
+
+// ── Newsletter Popup ─────────────────────────
+let popupShown = false;
+function showPopup() {
+  if (popupShown || sessionStorage.getItem('popup-dismissed')) return;
+  popupShown = true;
+  document.getElementById('newsletter-popup').classList.add('visible');
+  document.getElementById('nl-overlay').classList.add('visible');
+}
+function closePopup() {
+  document.getElementById('newsletter-popup').classList.remove('visible');
+  document.getElementById('nl-overlay').classList.remove('visible');
+  sessionStorage.setItem('popup-dismissed', '1');
+}
+// Show after 60s
+setTimeout(showPopup, 60000);
+// OR when reader reaches end of article
+window.addEventListener('scroll', () => {
+  if (popupShown) return;
+  const article = document.querySelector('.article-body');
+  if (!article) return;
+  const bottom = article.getBoundingClientRect().bottom;
+  if (bottom < window.innerHeight + 100) showPopup();
+}, { passive: true });
+
+// ── Share Buttons ────────────────────────────
+function shareTwitter() {
+  const title = document.title.replace(' — The Red Herring Fallacy', '');
+  const url = window.location.href;
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url), '_blank');
+}
+function shareWhatsApp() {
+  const title = document.title.replace(' — The Red Herring Fallacy', '');
+  const url = window.location.href;
+  window.open('https://wa.me/?text=' + encodeURIComponent(title + ' ' + url), '_blank');
+}
+function copyLink(btn) {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy Link';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+
+
+function showCookieBanner() {
+  if (!localStorage.getItem('cookie-choice')) {
+    setTimeout(() => { const b = document.getElementById('cookie-banner'); if (b) b.style.transform = 'translateY(0)'; }, 1500);
+  }
+}
+function acceptCookies() { localStorage.setItem('cookie-choice','accepted'); document.getElementById('cookie-banner').style.transform='translateY(100%)'; }
+function declineCookies() { localStorage.setItem('cookie-choice','declined'); document.getElementById('cookie-banner').style.transform='translateY(100%)'; }
+showCookieBanner();
+
+</script>
+</body>
+</html>
