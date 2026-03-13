@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <rect width="400" height="200" fill="#0A0A0A"/>
+  <rect x="0" y="0" width="400" height="6" fill="#D7000F"/>
+  <rect x="0" y="194" width="400" height="6" fill="#D7000F"/>
+  <text x="200" y="90" font-family="Georgia,serif" font-size="18" 
+        fill="#888078" text-anchor="middle" letter-spacing="8">THE</text>
+  <text x="200" y="130" font-family="Georgia,serif" font-size="36" font-weight="bold"
+        fill="#F5F0EB" text-anchor="middle" letter-spacing="4">RED HERRING</text>
+  <text x="200" y="165" font-family="Georgia,serif" font-size="18"
+        fill="#888078" text-anchor="middle" letter-spacing="8">FALLACY</text>
+</svg>
