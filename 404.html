@@ -3,15 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>404 — Page Not Found · The Red Herring Fallacy</title>
-  <meta name="robots" content="noindex">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>404 — Page Not Found — The Red Herring Fallacy</title>
+    <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/TheRedHerringFallacy/favicon.svg">
+  <link rel="alternate icon" href="/TheRedHerringFallacy/favicon.svg">
   <meta name="theme-color" content="#D7000F">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <!-- Performance -->
+  <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YT4XEJZHRM"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-YT4XEJZHRM');</script>
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YT4XEJZHRM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YT4XEJZHRM');
+</script>
   <style>
 /* ============================================
    RED HERRING FALLACY — Main Stylesheet
@@ -877,56 +887,557 @@ a { color: inherit; text-decoration: none; }
 
 
 /* ============================================
-   TOPIC FILTER BAR
+   INNER PAGES — About, Archive, Contact, etc.
    ============================================ */
-.filter-bar-section {
-  max-width: 1200px;
-  margin: 0 auto 1.5rem;
+.page-header {
+  max-width: 900px;
+  margin: 4rem auto 3rem;
   padding: 0 2rem;
-  overflow-x: auto;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
 }
-.filter-bar {
+.page-header .page-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.8rem;
+}
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.page-header p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+}
+.page-body {
+  max-width: 900px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+/* About */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.about-sidebar {}
+.about-initial-large {
+  width: 100px;
+  height: 100px;
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 3.5rem;
   display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
-.filter-btn {
+.about-sidebar-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+.about-sidebar-value {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.about-main p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.about-main h2 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2.5rem 0 1rem;
+}
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin: 2rem 0;
+}
+.theme-item {
+  background: var(--bg-card);
+  padding: 1.2rem 1.5rem;
+}
+.theme-item-name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.3rem;
+}
+.theme-item-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Archive */
+.archive-list { margin-top: 2rem; }
+.archive-year {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--border);
+  letter-spacing: 0.04em;
+  margin: 2rem 0 0.5rem;
+}
+.archive-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: baseline;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.archive-item:hover .archive-item-title { color: var(--red); }
+.archive-item-left {}
+.archive-item-category {
   font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  border: 1px solid var(--border);
-  background: none;
+  color: var(--red);
+  margin-bottom: 0.3rem;
+}
+.archive-item-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.2s;
+  margin-bottom: 0.3rem;
+}
+.archive-item-excerpt {
+  font-size: 0.88rem;
   color: var(--text-muted);
-  padding: 0.4rem 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s;
+  font-weight: 300;
+}
+.archive-item-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
   white-space: nowrap;
 }
-.filter-btn:hover {
+
+/* Podcast */
+.podcast-hero {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  padding: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.podcast-hero-art {
+  width: 120px;
+  height: 120px;
+  background: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--white);
+  text-align: center;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+.podcast-hero-text h2 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.podcast-hero-text p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.podcast-platforms {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.platform-link {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+.platform-link:hover { border-color: var(--red); color: var(--red); }
+.episode-list { margin-top: 1rem; }
+.episode-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  margin-bottom: 2px;
+  transition: background 0.2s;
+}
+.episode-item:hover { background: var(--bg-card-hover); }
+.episode-number {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.4rem;
+}
+.episode-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+.episode-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+.episode-player {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--bg);
+  padding: 0.7rem;
+}
+.ep-play {
+  width: 36px;
+  height: 36px;
+  background: var(--red);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  transition: background 0.2s;
+}
+.ep-play:hover { background: var(--red-dark); }
+.ep-bar { flex: 1; height: 3px; background: var(--border); position: relative; }
+.ep-progress { width: 0%; height: 100%; background: var(--red); }
+.ep-duration {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Search */
+.search-wrap { margin-bottom: 3rem; }
+.search-bar {
+  display: flex;
+  gap: 0;
+  border: 2px solid var(--red);
+}
+.search-input {
+  flex: 1;
+  padding: 1rem 1.2rem;
+  background: var(--bg-card);
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-btn {
+  padding: 1rem 1.5rem;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.search-btn:hover { background: var(--red-dark); }
+.search-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  background: none;
+}
+.filter-chip:hover, .filter-chip.active {
   border-color: var(--red);
   color: var(--red);
 }
-.filter-btn.active {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--white);
-}
-.post-card.hidden {
-  display: none !important;
-}
-.no-results {
+.search-results { margin-top: 2rem; }
+.search-empty {
   font-family: var(--font-serif);
   font-style: italic;
   color: var(--text-muted);
-  padding: 3rem 0;
-  text-align: center;
   font-size: 1rem;
-  display: none;
-  grid-column: 1 / -1;
+  padding: 2rem 0;
 }
-.no-results.visible { display: block; }
 
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+}
+.contact-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.contact-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.contact-info a { color: var(--red); border-bottom: 1px solid var(--red); }
+.contact-form-field { margin-bottom: 1.2rem; }
+.contact-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.contact-input, .contact-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-input:focus, .contact-textarea:focus { border-color: var(--red); }
+.contact-textarea { height: 150px; resize: vertical; }
+.contact-submit {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  padding: 0.9rem 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.contact-submit:hover { background: var(--red-dark); }
+
+/* Newsletter */
+.newsletter-hero {
+  background: var(--red);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.newsletter-hero h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.newsletter-hero p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  font-weight: 300;
+}
+.newsletter-cta-btn {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+.newsletter-cta-btn:hover { opacity: 0.85; }
+.newsletter-perks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 3rem;
+}
+.perk {
+  background: var(--bg-card);
+  padding: 2rem;
+}
+.perk-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+.perk h3 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.perk p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .themes-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .newsletter-perks { grid-template-columns: 1fr; }
+  .podcast-hero { flex-direction: column; }
+  .archive-item { grid-template-columns: 1fr; gap: 0.3rem; }
+}
+
+/* Legal / FAQ pages */
+.legal-body {
+  max-width: 760px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+.legal-body h2 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2.5rem 0 0.8rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.legal-body h2:first-of-type { border-top: none; padding-top: 0; }
+.legal-body p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+.legal-body ul {
+  margin: 0.5rem 0 1.5rem 1.5rem;
+}
+.legal-body ul li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.4rem;
+  font-weight: 300;
+}
+.legal-body .highlight-box {
+  background: var(--bg-card);
+  border-left: 3px solid var(--red);
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.legal-body .highlight-box p { margin-bottom: 0; }
+
+/* FAQ accordion */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 1.2rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s;
+}
+.faq-question:hover { color: var(--red); }
+.faq-icon {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--red);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.2s;
+}
+.faq-answer.open {
+  max-height: 500px;
+  padding-bottom: 1.2rem;
+}
+.faq-answer p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.faq-answer a { color: var(--red); border-bottom: 1px solid var(--red); }
 
 /* Cookie Banner */
 #cookie-banner {
@@ -947,12 +1458,40 @@ a { color: inherit; text-decoration: none; }
   transition: transform 0.4s ease;
 }
 #cookie-banner.visible { transform: translateY(0); }
-.cookie-text { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; flex: 1; }
+.cookie-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  flex: 1;
+}
 .cookie-text a { color: var(--red); border-bottom: 1px solid var(--red); }
 .cookie-btns { display: flex; gap: 0.8rem; flex-shrink: 0; }
-.cookie-accept { background: var(--red); color: var(--white); border: none; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.2rem; cursor: pointer; }
-.cookie-decline { background: none; border: 1px solid var(--border); color: var(--text-muted); font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem 1.2rem; cursor: pointer; }
-
+.cookie-accept {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cookie-accept:hover { background: var(--red-dark); }
+.cookie-decline {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cookie-decline:hover { border-color: var(--red); color: var(--red); }
 
 /* ============================================================
    SEASONAL & FESTIVE THEME STYLES
@@ -1305,83 +1844,52 @@ img.loaded, img:not([loading]) {
 </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="header-top">
-    <div class="header-date" id="live-date"></div>
-    <nav class="header-nav">
-      <a href="index.html">Home</a>
-      <a href="archive.html">Archive</a>
-      <a href="podcast.html">Podcast</a>
-      <a href="search.html">Search</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="newsletter.html" class="nav-subscribe">Newsletter</a>
-      <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">DARK</button>
-    </nav>
-  </div>
-  <div class="header-title-wrap">
-    <div class="header-rule"></div>
-    <h1 class="site-title"><a href="index.html" style="text-decoration:none;color:inherit;">The Red Herring Fallacy</a></h1>
-    <div class="header-rule"></div>
-    <p class="site-tagline">Dispatches from the margins of the argument</p>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-date" id="live-date"></div>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="archive.html">Archive</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="search.html">Search</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="newsletter.html" class="nav-subscribe">Newsletter</a>
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙 DARK</button>
+      </nav>
+    </div>
+    <div class="header-title-wrap">
+      <div class="header-rule"></div>
+      <h1 class="site-title"><a href="index.html" style="text-decoration:none;color:inherit;">The Red Herring Fallacy</a></h1>
+      <div class="header-rule"></div>
+      <p class="site-tagline">Dispatches from the margins of the argument</p>
+    </div>
+  </header>
 
-<main id="main-content" style="max-width:760px;margin:5rem auto;padding:0 2rem;text-align:center;">
-
-  <div style="font-family:var(--font-display);font-size:8rem;color:var(--red);line-height:1;margin-bottom:1rem;letter-spacing:0.05em;">404</div>
-  <h2 style="font-family:var(--font-serif);font-size:1.8rem;font-weight:700;color:var(--text-primary);margin-bottom:0.8rem;">This argument has gone missing.</h2>
-  <p style="font-family:var(--font-body);font-size:1rem;color:var(--text-muted);margin-bottom:3rem;line-height:1.7;">The page you're looking for doesn't exist — or never did. Either way, there's plenty worth reading below.</p>
-
-  <div style="height:3px;background:var(--red);width:60px;margin:0 auto 3rem;"></div>
-
-  <!-- ALL ARTICLES LISTED -->
-  <div style="text-align:left;">
-    <div style="font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;">All Issues</div>
-
-    <a href="posts/the-jesters-have-always-known.html" style="display:block;padding:1.5rem 0;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;">
-      <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.4rem;">
-        <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:0.1em;">Issue 004</span>
-        <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);">Mar 24, 2026</span>
-      </div>
-      <div style="font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--text-primary);margin-bottom:0.3rem;">The Jesters Have Always Known</div>
-      <div style="font-size:0.85rem;color:var(--text-muted);font-style:italic;">On celebrity spectacle, the Epstein network, deepfakes, and the grotesque hierarchy that protects powerful men.</div>
-    </a>
-
-    <a href="posts/what-we-refuse-to-protect.html" style="display:block;padding:1.5rem 0;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;">
-      <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.4rem;">
-        <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:0.1em;">Issue 003</span>
-        <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--red);">Publishes March 27, 2026</span>
-      </div>
-      <div style="font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--text-primary);margin-bottom:0.3rem;">What We Refuse to Protect</div>
-      <div style="font-size:0.85rem;color:var(--text-muted);font-style:italic;">On child sexual abuse, perpetrator psychology, and the moral fracture we have decided to live with.</div>
-    </a>
-
-    <a href="posts/when-men-lose-they-litigate.html" style="display:block;padding:1.5rem 0;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;">
-      <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.4rem;">
-        <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:0.1em;">Issue 002</span>
-        <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--red);">Publishes March 20, 2026</span>
-      </div>
-      <div style="font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--text-primary);margin-bottom:0.3rem;">When Men Lose, They Litigate</div>
-      <div style="font-size:0.85rem;color:var(--text-muted);font-style:italic;">A K-pop star defends her home from a burglar. He sues her. On entitlement and wounded pride.</div>
-    </a>
-
-    <a href="posts/architecture-of-male-impunity.html" style="display:block;padding:1.5rem 0;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;">
-      <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:0.4rem;">
-        <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:0.1em;">Issue 001</span>
-        <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);">Jan 7, 2026</span>
-      </div>
-      <div style="font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--text-primary);margin-bottom:0.3rem;">The Architecture of Male Impunity</div>
-      <div style="font-size:0.85rem;color:var(--text-muted);font-style:italic;">Porn, power, and what the Grok deepfake scandal reveals about a system working exactly as designed.</div>
-    </a>
-
+  <div style="max-width:600px;margin:8rem auto;padding:0 2rem;text-align:center;">
+    <div style="font-family:var(--font-display);font-size:8rem;color:var(--red);line-height:1;margin-bottom:1rem;">404</div>
+    <div style="font-family:var(--font-serif);font-style:italic;font-size:1.3rem;color:var(--text-secondary);margin-bottom:1rem;">This argument has gone missing.</div>
+    <p style="font-size:0.95rem;color:var(--text-muted);margin-bottom:2.5rem;font-weight:300;">The page you're looking for doesn't exist — it may have moved, been renamed, or never existed in the first place. A fitting metaphor, really.</p>
+    <a href="index.html" style="display:inline-block;background:var(--red);color:var(--white);font-family:var(--font-mono);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.9rem 2rem;transition:background 0.2s;">Back to the Homepage →</a>
   </div>
 
-  <a href="index.html" style="display:inline-block;margin-top:3rem;background:var(--red);color:var(--white);font-family:var(--font-mono);font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.9rem 2.5rem;text-decoration:none;">← Back to Homepage</a>
+  
+  <!-- SPOTIFY NOW PLAYING -->
+  <div class="spotify-bar" id="spotify-bar">
+    <svg class="spotify-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    <span class="spotify-label">Now Playing</span>
+    <span class="spotify-track" id="spotify-track">
+      <!-- Track info loads here -->
+      <a href="https://open.spotify.com" target="_blank">Open Spotify</a>
+    </span>
+    <div class="spotify-bars">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
 
-</main>
-
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-title">The Red Herring Fallacy</div>
       <div class="footer-links">
@@ -1396,11 +1904,247 @@ img.loaded, img:not([loading]) {
         <a href="comments-policy.html">Comments Policy</a>
         <a href="subscription-terms.html">Terms</a>
       </div>
-            <div class="footer-copy">© 2026 The Red Herring Fallacy. All rights reserved. · <a href="comments-policy.html" style="color:inherit;border-bottom:1px solid var(--border);">Comments Policy</a> · <a href="subscription-terms.html" style="color:inherit;border-bottom:1px solid var(--border);">Terms</a> · <a href="faq.html" style="color:inherit;border-bottom:1px solid var(--border);">FAQ</a></div>
+      <div class="footer-copy">© 2026 The Red Herring Fallacy. All rights reserved. · <a href="comments-policy.html" style="color:inherit;border-bottom:1px solid var(--border);">Comments Policy</a> · <a href="subscription-terms.html" style="color:inherit;border-bottom:1px solid var(--border);">Terms</a> · <a href="faq.html" style="color:inherit;border-bottom:1px solid var(--border);">FAQ</a></div>
     </div>
   </footer>
-<script>
 
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <p class="cookie-text">We use cookies to analyse traffic and improve your experience. By continuing to use this site you accept our <a href="subscription-terms.html">terms</a>.</p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
+</div>
+<script>
+// ============================================
+// RED HERRING FALLACY — Main JS
+// Auto light/dark mode: light 06:00–18:00, dark 18:00–06:00
+// Manual override via toggle button
+// ============================================
+
+// ── Theme Logic ─────────────────────────────
+
+function getAutoTheme() {
+  const hour = new Date().getHours();
+  return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+}
+
+function applyTheme(theme, isManual = false) {
+  const html = document.documentElement;
+  const btn = document.getElementById('theme-btn');
+
+  if (theme === 'light') {
+    html.classList.add('light-mode');
+    if (btn) btn.innerHTML = '☀️ LIGHT';
+  } else {
+    html.classList.remove('light-mode');
+    if (btn) btn.innerHTML = '🌙 DARK';
+  }
+
+  if (isManual) {
+    // Store manual override with expiry — clears at next auto-switch boundary
+    sessionStorage.setItem('theme-override', theme);
+  }
+}
+
+function toggleTheme() {
+  const isLight = document.documentElement.classList.contains('light-mode');
+  applyTheme(isLight ? 'dark' : 'light', true);
+}
+
+function initTheme() {
+  const override = sessionStorage.getItem('theme-override');
+  const theme = override || getAutoTheme();
+  applyTheme(theme);
+}
+
+// Auto-switch: check every minute, apply if hour boundary crossed
+function scheduleAutoSwitch() {
+  setInterval(() => {
+    // Only auto-switch if no manual override in this session
+    if (!sessionStorage.getItem('theme-override')) {
+      applyTheme(getAutoTheme());
+    }
+  }, 60 * 1000); // check every minute
+
+  // Clear override at 06:00 and 18:00 so auto resumes
+  setInterval(() => {
+    const now = new Date();
+    const h = now.getHours();
+    const m = now.getMinutes();
+    if ((h === 6 || h === 18) && m === 0) {
+      sessionStorage.removeItem('theme-override');
+      applyTheme(getAutoTheme());
+    }
+  }, 60 * 1000);
+}
+
+// ── Init ─────────────────────────────────────
+initTheme();
+scheduleAutoSwitch();
+
+// ── Live date in header ──────────────────────
+const dateEl = document.getElementById('live-date');
+if (dateEl) {
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  dateEl.textContent = now.toLocaleDateString('en-US', options).toUpperCase();
+}
+
+// ── Subscribe form handler ───────────────────
+function handleSubscribe(e) {
+  e.preventDefault();
+  const form = e.target;
+  const input = form.querySelector('.subscribe-input');
+  const btn = form.querySelector('.subscribe-btn');
+  const email = input.value;
+
+  btn.textContent = 'Subscribed ✓';
+  btn.style.background = 'var(--text-primary)';
+  btn.style.color = 'var(--bg)';
+  input.value = '';
+  input.placeholder = `${email} — you're in.`;
+
+  setTimeout(() => {
+    btn.textContent = 'Subscribe Free';
+    btn.style.background = '';
+    btn.style.color = '';
+    input.placeholder = 'your@email.com';
+  }, 4000);
+}
+
+// ── Stagger post card animations ─────────────
+document.querySelectorAll('.post-card').forEach((card, i) => {
+  card.style.setProperty('--i', i);
+});
+
+// ── Podcast play button ───────────────────────
+document.querySelectorAll('.play-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const isPlaying = btn.textContent === '❚❚';
+    btn.textContent = isPlaying ? '▶' : '❚❚';
+  });
+});
+
+
+// ── Reading Progress Bar ─────────────────────
+window.addEventListener('scroll', () => {
+  const article = document.querySelector('.article-body');
+  if (!article) return;
+  const bar = document.getElementById('reading-progress');
+  const btt = document.getElementById('back-to-top');
+  const toc = document.getElementById('toc');
+
+  const articleTop = article.offsetTop;
+  const articleHeight = article.offsetHeight;
+  const scrolled = window.scrollY - articleTop;
+  const progress = Math.min(Math.max((scrolled / articleHeight) * 100, 0), 100);
+  if (bar) bar.style.width = progress + '%';
+
+  // Back to top
+  if (btt) btt.classList.toggle('visible', window.scrollY > 400);
+
+  // TOC visibility
+  if (toc) toc.classList.toggle('visible', window.scrollY > 300);
+
+  // Highlight active TOC item
+  const headings = document.querySelectorAll('.article-body h2');
+  headings.forEach(h => {
+    const link = document.querySelector(`#toc-nav a[href="#${h.id}"]`);
+    if (!link) return;
+    const top = h.getBoundingClientRect().top;
+    link.classList.toggle('active', top < 150 && top > -200);
+  });
+});
+
+// ── Build TOC ────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const headings = document.querySelectorAll('.article-body h2');
+  const tocNav = document.getElementById('toc-nav');
+  if (!tocNav || headings.length === 0) return;
+  headings.forEach((h, i) => {
+    if (!h.id) h.id = 'section-' + i;
+    const a = document.createElement('a');
+    a.href = '#' + h.id;
+    a.textContent = h.textContent;
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    tocNav.appendChild(a);
+  });
+});
+
+// ── Newsletter Popup ─────────────────────────
+let popupShown = false;
+function showPopup() {
+  if (popupShown || sessionStorage.getItem('popup-dismissed')) return;
+  popupShown = true;
+  document.getElementById('newsletter-popup').classList.add('visible');
+  document.getElementById('nl-overlay').classList.add('visible');
+}
+function closePopup() {
+  document.getElementById('newsletter-popup').classList.remove('visible');
+  document.getElementById('nl-overlay').classList.remove('visible');
+  sessionStorage.setItem('popup-dismissed', '1');
+}
+// Show after 60s
+setTimeout(showPopup, 60000);
+// OR when reader reaches end of article
+window.addEventListener('scroll', () => {
+  if (popupShown) return;
+  const article = document.querySelector('.article-body');
+  if (!article) return;
+  const bottom = article.getBoundingClientRect().bottom;
+  if (bottom < window.innerHeight + 100) showPopup();
+}, { passive: true });
+
+// ── Share Buttons ────────────────────────────
+function shareTwitter() {
+  const title = document.title.replace(' — The Red Herring Fallacy', '');
+  const url = window.location.href;
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url), '_blank');
+}
+function shareWhatsApp() {
+  const title = document.title.replace(' — The Red Herring Fallacy', '');
+  const url = window.location.href;
+  window.open('https://wa.me/?text=' + encodeURIComponent(title + ' ' + url), '_blank');
+}
+function copyLink(btn) {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy Link';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+
+
+
+// Cookie banner
+function showCookieBanner() {
+  if (!localStorage.getItem('cookie-choice')) {
+    setTimeout(() => {
+      const b = document.getElementById('cookie-banner');
+      if (b) b.classList.add('visible');
+    }, 1500);
+  }
+}
+function acceptCookies() {
+  localStorage.setItem('cookie-choice', 'accepted');
+  document.getElementById('cookie-banner').classList.remove('visible');
+}
+function declineCookies() {
+  localStorage.setItem('cookie-choice', 'declined');
+  document.getElementById('cookie-banner').classList.remove('visible');
+}
+showCookieBanner();
+
+</script>
+<script>
 
 // ============================================================
 // THE RED HERRING FALLACY — Seasonal & Festive Theme Engine
@@ -1616,6 +2360,36 @@ document.addEventListener('DOMContentLoaded', () => {
   applySeasonalTheme(theme);
 });
 
+</script>
+<script>
+
+// ── Spotify Now Playing ──────────────────────────────
+// To update your now-playing track:
+// 1. Go to Spotify, right-click any song → Share → Copy Song Link
+// 2. Update SPOTIFY_TRACK below with the song name, artist, and link
+// This updates across the whole site when you change it here
+// For automatic real-time sync, a backend server is required (see FAQ)
+
+const SPOTIFY_CONFIG = {
+  trackName: null,   // e.g. "Flowers - Miley Cyrus"  
+  trackUrl: null,    // e.g. "https://open.spotify.com/track/..."
+  active: false      // set to true when you want to show it
+};
+
+(function initSpotify() {
+  const bar = document.getElementById('spotify-bar');
+  const trackEl = document.getElementById('spotify-track');
+  if (!bar || !trackEl) return;
+
+  if (SPOTIFY_CONFIG.active && SPOTIFY_CONFIG.trackName) {
+    trackEl.innerHTML = SPOTIFY_CONFIG.trackUrl 
+      ? `<a href="${SPOTIFY_CONFIG.trackUrl}" target="_blank">${SPOTIFY_CONFIG.trackName}</a>`
+      : SPOTIFY_CONFIG.trackName;
+    bar.style.display = 'flex';
+  } else {
+    bar.style.display = 'none';
+  }
+})();
 
 </script>
 </body>
